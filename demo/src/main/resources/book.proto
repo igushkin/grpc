@@ -12,9 +12,9 @@ service MeetingManager {
 }
 
 message Meeting {
-    User user1 = 1;
-    User user2 = 2;
-    google.protobuf.Timestamp time = 3;
+    int32 id = 1;
+    User user = 2;
+    google.protobuf.Timestamp time = 4;
 }
 
 message User {

@@ -104,8 +104,9 @@ public class app {
     }
 
     // Book appointment
+    // Select user
     @GetMapping("/appointment")
-    public ModelAndView bookAppointment(@RequestParam(value = "id", defaultValue = "-1", required = false) Integer id) {
+    public ModelAndView selectUser(@RequestParam(value = "id", defaultValue = "-1", required = false) Integer id) {
         if (id == -1) {
             String host = service1.getHostAddresses()[0];
             int port = service1.getPort();
@@ -139,5 +140,9 @@ public class app {
         }
     }
 
-    // Remove appointment
+    @PostMapping("/appointment")
+    public ModelAndView addMeeting(@RequestBody MultiValueMap<String, String> formData) {
+
+        return null;
+    }
 }

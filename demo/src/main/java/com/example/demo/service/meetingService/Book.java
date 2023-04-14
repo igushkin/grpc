@@ -19,41 +19,33 @@ public final class Book {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.com.example.demo.service.meetingService.User user1 = 1;</code>
+     * <code>int32 id = 1;</code>
      */
-    boolean hasUser1();
-    /**
-     * <code>.com.example.demo.service.meetingService.User user1 = 1;</code>
-     */
-    com.example.demo.service.meetingService.Book.User getUser1();
-    /**
-     * <code>.com.example.demo.service.meetingService.User user1 = 1;</code>
-     */
-    com.example.demo.service.meetingService.Book.UserOrBuilder getUser1OrBuilder();
+    int getId();
 
     /**
-     * <code>.com.example.demo.service.meetingService.User user2 = 2;</code>
+     * <code>.com.example.demo.service.meetingService.User user = 2;</code>
      */
-    boolean hasUser2();
+    boolean hasUser();
     /**
-     * <code>.com.example.demo.service.meetingService.User user2 = 2;</code>
+     * <code>.com.example.demo.service.meetingService.User user = 2;</code>
      */
-    com.example.demo.service.meetingService.Book.User getUser2();
+    com.example.demo.service.meetingService.Book.User getUser();
     /**
-     * <code>.com.example.demo.service.meetingService.User user2 = 2;</code>
+     * <code>.com.example.demo.service.meetingService.User user = 2;</code>
      */
-    com.example.demo.service.meetingService.Book.UserOrBuilder getUser2OrBuilder();
+    com.example.demo.service.meetingService.Book.UserOrBuilder getUserOrBuilder();
 
     /**
-     * <code>.google.protobuf.Timestamp time = 3;</code>
+     * <code>.google.protobuf.Timestamp time = 4;</code>
      */
     boolean hasTime();
     /**
-     * <code>.google.protobuf.Timestamp time = 3;</code>
+     * <code>.google.protobuf.Timestamp time = 4;</code>
      */
     com.google.protobuf.Timestamp getTime();
     /**
-     * <code>.google.protobuf.Timestamp time = 3;</code>
+     * <code>.google.protobuf.Timestamp time = 4;</code>
      */
     com.google.protobuf.TimestampOrBuilder getTimeOrBuilder();
   }
@@ -70,6 +62,7 @@ public final class Book {
       super(builder);
     }
     private Meeting() {
+      id_ = 0;
     }
 
     @java.lang.Override
@@ -96,33 +89,25 @@ public final class Book {
             case 0:
               done = true;
               break;
-            case 10: {
-              com.example.demo.service.meetingService.Book.User.Builder subBuilder = null;
-              if (user1_ != null) {
-                subBuilder = user1_.toBuilder();
-              }
-              user1_ = input.readMessage(com.example.demo.service.meetingService.Book.User.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(user1_);
-                user1_ = subBuilder.buildPartial();
-              }
+            case 8: {
 
+              id_ = input.readInt32();
               break;
             }
             case 18: {
               com.example.demo.service.meetingService.Book.User.Builder subBuilder = null;
-              if (user2_ != null) {
-                subBuilder = user2_.toBuilder();
+              if (user_ != null) {
+                subBuilder = user_.toBuilder();
               }
-              user2_ = input.readMessage(com.example.demo.service.meetingService.Book.User.parser(), extensionRegistry);
+              user_ = input.readMessage(com.example.demo.service.meetingService.Book.User.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom(user2_);
-                user2_ = subBuilder.buildPartial();
+                subBuilder.mergeFrom(user_);
+                user_ = subBuilder.buildPartial();
               }
 
               break;
             }
-            case 26: {
+            case 34: {
               com.google.protobuf.Timestamp.Builder subBuilder = null;
               if (time_ != null) {
                 subBuilder = time_.toBuilder();
@@ -167,64 +152,52 @@ public final class Book {
               com.example.demo.service.meetingService.Book.Meeting.class, com.example.demo.service.meetingService.Book.Meeting.Builder.class);
     }
 
-    public static final int USER1_FIELD_NUMBER = 1;
-    private com.example.demo.service.meetingService.Book.User user1_;
+    public static final int ID_FIELD_NUMBER = 1;
+    private int id_;
     /**
-     * <code>.com.example.demo.service.meetingService.User user1 = 1;</code>
+     * <code>int32 id = 1;</code>
      */
-    public boolean hasUser1() {
-      return user1_ != null;
-    }
-    /**
-     * <code>.com.example.demo.service.meetingService.User user1 = 1;</code>
-     */
-    public com.example.demo.service.meetingService.Book.User getUser1() {
-      return user1_ == null ? com.example.demo.service.meetingService.Book.User.getDefaultInstance() : user1_;
-    }
-    /**
-     * <code>.com.example.demo.service.meetingService.User user1 = 1;</code>
-     */
-    public com.example.demo.service.meetingService.Book.UserOrBuilder getUser1OrBuilder() {
-      return getUser1();
+    public int getId() {
+      return id_;
     }
 
-    public static final int USER2_FIELD_NUMBER = 2;
-    private com.example.demo.service.meetingService.Book.User user2_;
+    public static final int USER_FIELD_NUMBER = 2;
+    private com.example.demo.service.meetingService.Book.User user_;
     /**
-     * <code>.com.example.demo.service.meetingService.User user2 = 2;</code>
+     * <code>.com.example.demo.service.meetingService.User user = 2;</code>
      */
-    public boolean hasUser2() {
-      return user2_ != null;
+    public boolean hasUser() {
+      return user_ != null;
     }
     /**
-     * <code>.com.example.demo.service.meetingService.User user2 = 2;</code>
+     * <code>.com.example.demo.service.meetingService.User user = 2;</code>
      */
-    public com.example.demo.service.meetingService.Book.User getUser2() {
-      return user2_ == null ? com.example.demo.service.meetingService.Book.User.getDefaultInstance() : user2_;
+    public com.example.demo.service.meetingService.Book.User getUser() {
+      return user_ == null ? com.example.demo.service.meetingService.Book.User.getDefaultInstance() : user_;
     }
     /**
-     * <code>.com.example.demo.service.meetingService.User user2 = 2;</code>
+     * <code>.com.example.demo.service.meetingService.User user = 2;</code>
      */
-    public com.example.demo.service.meetingService.Book.UserOrBuilder getUser2OrBuilder() {
-      return getUser2();
+    public com.example.demo.service.meetingService.Book.UserOrBuilder getUserOrBuilder() {
+      return getUser();
     }
 
-    public static final int TIME_FIELD_NUMBER = 3;
+    public static final int TIME_FIELD_NUMBER = 4;
     private com.google.protobuf.Timestamp time_;
     /**
-     * <code>.google.protobuf.Timestamp time = 3;</code>
+     * <code>.google.protobuf.Timestamp time = 4;</code>
      */
     public boolean hasTime() {
       return time_ != null;
     }
     /**
-     * <code>.google.protobuf.Timestamp time = 3;</code>
+     * <code>.google.protobuf.Timestamp time = 4;</code>
      */
     public com.google.protobuf.Timestamp getTime() {
       return time_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : time_;
     }
     /**
-     * <code>.google.protobuf.Timestamp time = 3;</code>
+     * <code>.google.protobuf.Timestamp time = 4;</code>
      */
     public com.google.protobuf.TimestampOrBuilder getTimeOrBuilder() {
       return getTime();
@@ -244,14 +217,14 @@ public final class Book {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (user1_ != null) {
-        output.writeMessage(1, getUser1());
+      if (id_ != 0) {
+        output.writeInt32(1, id_);
       }
-      if (user2_ != null) {
-        output.writeMessage(2, getUser2());
+      if (user_ != null) {
+        output.writeMessage(2, getUser());
       }
       if (time_ != null) {
-        output.writeMessage(3, getTime());
+        output.writeMessage(4, getTime());
       }
       unknownFields.writeTo(output);
     }
@@ -262,17 +235,17 @@ public final class Book {
       if (size != -1) return size;
 
       size = 0;
-      if (user1_ != null) {
+      if (id_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, getUser1());
+          .computeInt32Size(1, id_);
       }
-      if (user2_ != null) {
+      if (user_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, getUser2());
+          .computeMessageSize(2, getUser());
       }
       if (time_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(3, getTime());
+          .computeMessageSize(4, getTime());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -290,15 +263,12 @@ public final class Book {
       com.example.demo.service.meetingService.Book.Meeting other = (com.example.demo.service.meetingService.Book.Meeting) obj;
 
       boolean result = true;
-      result = result && (hasUser1() == other.hasUser1());
-      if (hasUser1()) {
-        result = result && getUser1()
-            .equals(other.getUser1());
-      }
-      result = result && (hasUser2() == other.hasUser2());
-      if (hasUser2()) {
-        result = result && getUser2()
-            .equals(other.getUser2());
+      result = result && (getId()
+          == other.getId());
+      result = result && (hasUser() == other.hasUser());
+      if (hasUser()) {
+        result = result && getUser()
+            .equals(other.getUser());
       }
       result = result && (hasTime() == other.hasTime());
       if (hasTime()) {
@@ -316,13 +286,11 @@ public final class Book {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      if (hasUser1()) {
-        hash = (37 * hash) + USER1_FIELD_NUMBER;
-        hash = (53 * hash) + getUser1().hashCode();
-      }
-      if (hasUser2()) {
-        hash = (37 * hash) + USER2_FIELD_NUMBER;
-        hash = (53 * hash) + getUser2().hashCode();
+      hash = (37 * hash) + ID_FIELD_NUMBER;
+      hash = (53 * hash) + getId();
+      if (hasUser()) {
+        hash = (37 * hash) + USER_FIELD_NUMBER;
+        hash = (53 * hash) + getUser().hashCode();
       }
       if (hasTime()) {
         hash = (37 * hash) + TIME_FIELD_NUMBER;
@@ -461,17 +429,13 @@ public final class Book {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (user1Builder_ == null) {
-          user1_ = null;
+        id_ = 0;
+
+        if (userBuilder_ == null) {
+          user_ = null;
         } else {
-          user1_ = null;
-          user1Builder_ = null;
-        }
-        if (user2Builder_ == null) {
-          user2_ = null;
-        } else {
-          user2_ = null;
-          user2Builder_ = null;
+          user_ = null;
+          userBuilder_ = null;
         }
         if (timeBuilder_ == null) {
           time_ = null;
@@ -505,15 +469,11 @@ public final class Book {
       @java.lang.Override
       public com.example.demo.service.meetingService.Book.Meeting buildPartial() {
         com.example.demo.service.meetingService.Book.Meeting result = new com.example.demo.service.meetingService.Book.Meeting(this);
-        if (user1Builder_ == null) {
-          result.user1_ = user1_;
+        result.id_ = id_;
+        if (userBuilder_ == null) {
+          result.user_ = user_;
         } else {
-          result.user1_ = user1Builder_.build();
-        }
-        if (user2Builder_ == null) {
-          result.user2_ = user2_;
-        } else {
-          result.user2_ = user2Builder_.build();
+          result.user_ = userBuilder_.build();
         }
         if (timeBuilder_ == null) {
           result.time_ = time_;
@@ -568,11 +528,11 @@ public final class Book {
 
       public Builder mergeFrom(com.example.demo.service.meetingService.Book.Meeting other) {
         if (other == com.example.demo.service.meetingService.Book.Meeting.getDefaultInstance()) return this;
-        if (other.hasUser1()) {
-          mergeUser1(other.getUser1());
+        if (other.getId() != 0) {
+          setId(other.getId());
         }
-        if (other.hasUser2()) {
-          mergeUser2(other.getUser2());
+        if (other.hasUser()) {
+          mergeUser(other.getUser());
         }
         if (other.hasTime()) {
           mergeTime(other.getTime());
@@ -606,251 +566,160 @@ public final class Book {
         return this;
       }
 
-      private com.example.demo.service.meetingService.Book.User user1_ = null;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.example.demo.service.meetingService.Book.User, com.example.demo.service.meetingService.Book.User.Builder, com.example.demo.service.meetingService.Book.UserOrBuilder> user1Builder_;
+      private int id_ ;
       /**
-       * <code>.com.example.demo.service.meetingService.User user1 = 1;</code>
+       * <code>int32 id = 1;</code>
        */
-      public boolean hasUser1() {
-        return user1Builder_ != null || user1_ != null;
+      public int getId() {
+        return id_;
       }
       /**
-       * <code>.com.example.demo.service.meetingService.User user1 = 1;</code>
+       * <code>int32 id = 1;</code>
        */
-      public com.example.demo.service.meetingService.Book.User getUser1() {
-        if (user1Builder_ == null) {
-          return user1_ == null ? com.example.demo.service.meetingService.Book.User.getDefaultInstance() : user1_;
+      public Builder setId(int value) {
+        
+        id_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 id = 1;</code>
+       */
+      public Builder clearId() {
+        
+        id_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private com.example.demo.service.meetingService.Book.User user_ = null;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.example.demo.service.meetingService.Book.User, com.example.demo.service.meetingService.Book.User.Builder, com.example.demo.service.meetingService.Book.UserOrBuilder> userBuilder_;
+      /**
+       * <code>.com.example.demo.service.meetingService.User user = 2;</code>
+       */
+      public boolean hasUser() {
+        return userBuilder_ != null || user_ != null;
+      }
+      /**
+       * <code>.com.example.demo.service.meetingService.User user = 2;</code>
+       */
+      public com.example.demo.service.meetingService.Book.User getUser() {
+        if (userBuilder_ == null) {
+          return user_ == null ? com.example.demo.service.meetingService.Book.User.getDefaultInstance() : user_;
         } else {
-          return user1Builder_.getMessage();
+          return userBuilder_.getMessage();
         }
       }
       /**
-       * <code>.com.example.demo.service.meetingService.User user1 = 1;</code>
+       * <code>.com.example.demo.service.meetingService.User user = 2;</code>
        */
-      public Builder setUser1(com.example.demo.service.meetingService.Book.User value) {
-        if (user1Builder_ == null) {
+      public Builder setUser(com.example.demo.service.meetingService.Book.User value) {
+        if (userBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          user1_ = value;
+          user_ = value;
           onChanged();
         } else {
-          user1Builder_.setMessage(value);
+          userBuilder_.setMessage(value);
         }
 
         return this;
       }
       /**
-       * <code>.com.example.demo.service.meetingService.User user1 = 1;</code>
+       * <code>.com.example.demo.service.meetingService.User user = 2;</code>
        */
-      public Builder setUser1(
+      public Builder setUser(
           com.example.demo.service.meetingService.Book.User.Builder builderForValue) {
-        if (user1Builder_ == null) {
-          user1_ = builderForValue.build();
+        if (userBuilder_ == null) {
+          user_ = builderForValue.build();
           onChanged();
         } else {
-          user1Builder_.setMessage(builderForValue.build());
+          userBuilder_.setMessage(builderForValue.build());
         }
 
         return this;
       }
       /**
-       * <code>.com.example.demo.service.meetingService.User user1 = 1;</code>
+       * <code>.com.example.demo.service.meetingService.User user = 2;</code>
        */
-      public Builder mergeUser1(com.example.demo.service.meetingService.Book.User value) {
-        if (user1Builder_ == null) {
-          if (user1_ != null) {
-            user1_ =
-              com.example.demo.service.meetingService.Book.User.newBuilder(user1_).mergeFrom(value).buildPartial();
+      public Builder mergeUser(com.example.demo.service.meetingService.Book.User value) {
+        if (userBuilder_ == null) {
+          if (user_ != null) {
+            user_ =
+              com.example.demo.service.meetingService.Book.User.newBuilder(user_).mergeFrom(value).buildPartial();
           } else {
-            user1_ = value;
+            user_ = value;
           }
           onChanged();
         } else {
-          user1Builder_.mergeFrom(value);
+          userBuilder_.mergeFrom(value);
         }
 
         return this;
       }
       /**
-       * <code>.com.example.demo.service.meetingService.User user1 = 1;</code>
+       * <code>.com.example.demo.service.meetingService.User user = 2;</code>
        */
-      public Builder clearUser1() {
-        if (user1Builder_ == null) {
-          user1_ = null;
+      public Builder clearUser() {
+        if (userBuilder_ == null) {
+          user_ = null;
           onChanged();
         } else {
-          user1_ = null;
-          user1Builder_ = null;
+          user_ = null;
+          userBuilder_ = null;
         }
 
         return this;
       }
       /**
-       * <code>.com.example.demo.service.meetingService.User user1 = 1;</code>
+       * <code>.com.example.demo.service.meetingService.User user = 2;</code>
        */
-      public com.example.demo.service.meetingService.Book.User.Builder getUser1Builder() {
+      public com.example.demo.service.meetingService.Book.User.Builder getUserBuilder() {
         
         onChanged();
-        return getUser1FieldBuilder().getBuilder();
+        return getUserFieldBuilder().getBuilder();
       }
       /**
-       * <code>.com.example.demo.service.meetingService.User user1 = 1;</code>
+       * <code>.com.example.demo.service.meetingService.User user = 2;</code>
        */
-      public com.example.demo.service.meetingService.Book.UserOrBuilder getUser1OrBuilder() {
-        if (user1Builder_ != null) {
-          return user1Builder_.getMessageOrBuilder();
+      public com.example.demo.service.meetingService.Book.UserOrBuilder getUserOrBuilder() {
+        if (userBuilder_ != null) {
+          return userBuilder_.getMessageOrBuilder();
         } else {
-          return user1_ == null ?
-              com.example.demo.service.meetingService.Book.User.getDefaultInstance() : user1_;
+          return user_ == null ?
+              com.example.demo.service.meetingService.Book.User.getDefaultInstance() : user_;
         }
       }
       /**
-       * <code>.com.example.demo.service.meetingService.User user1 = 1;</code>
+       * <code>.com.example.demo.service.meetingService.User user = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           com.example.demo.service.meetingService.Book.User, com.example.demo.service.meetingService.Book.User.Builder, com.example.demo.service.meetingService.Book.UserOrBuilder> 
-          getUser1FieldBuilder() {
-        if (user1Builder_ == null) {
-          user1Builder_ = new com.google.protobuf.SingleFieldBuilderV3<
+          getUserFieldBuilder() {
+        if (userBuilder_ == null) {
+          userBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
               com.example.demo.service.meetingService.Book.User, com.example.demo.service.meetingService.Book.User.Builder, com.example.demo.service.meetingService.Book.UserOrBuilder>(
-                  getUser1(),
+                  getUser(),
                   getParentForChildren(),
                   isClean());
-          user1_ = null;
+          user_ = null;
         }
-        return user1Builder_;
-      }
-
-      private com.example.demo.service.meetingService.Book.User user2_ = null;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.example.demo.service.meetingService.Book.User, com.example.demo.service.meetingService.Book.User.Builder, com.example.demo.service.meetingService.Book.UserOrBuilder> user2Builder_;
-      /**
-       * <code>.com.example.demo.service.meetingService.User user2 = 2;</code>
-       */
-      public boolean hasUser2() {
-        return user2Builder_ != null || user2_ != null;
-      }
-      /**
-       * <code>.com.example.demo.service.meetingService.User user2 = 2;</code>
-       */
-      public com.example.demo.service.meetingService.Book.User getUser2() {
-        if (user2Builder_ == null) {
-          return user2_ == null ? com.example.demo.service.meetingService.Book.User.getDefaultInstance() : user2_;
-        } else {
-          return user2Builder_.getMessage();
-        }
-      }
-      /**
-       * <code>.com.example.demo.service.meetingService.User user2 = 2;</code>
-       */
-      public Builder setUser2(com.example.demo.service.meetingService.Book.User value) {
-        if (user2Builder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          user2_ = value;
-          onChanged();
-        } else {
-          user2Builder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.com.example.demo.service.meetingService.User user2 = 2;</code>
-       */
-      public Builder setUser2(
-          com.example.demo.service.meetingService.Book.User.Builder builderForValue) {
-        if (user2Builder_ == null) {
-          user2_ = builderForValue.build();
-          onChanged();
-        } else {
-          user2Builder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <code>.com.example.demo.service.meetingService.User user2 = 2;</code>
-       */
-      public Builder mergeUser2(com.example.demo.service.meetingService.Book.User value) {
-        if (user2Builder_ == null) {
-          if (user2_ != null) {
-            user2_ =
-              com.example.demo.service.meetingService.Book.User.newBuilder(user2_).mergeFrom(value).buildPartial();
-          } else {
-            user2_ = value;
-          }
-          onChanged();
-        } else {
-          user2Builder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.com.example.demo.service.meetingService.User user2 = 2;</code>
-       */
-      public Builder clearUser2() {
-        if (user2Builder_ == null) {
-          user2_ = null;
-          onChanged();
-        } else {
-          user2_ = null;
-          user2Builder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <code>.com.example.demo.service.meetingService.User user2 = 2;</code>
-       */
-      public com.example.demo.service.meetingService.Book.User.Builder getUser2Builder() {
-        
-        onChanged();
-        return getUser2FieldBuilder().getBuilder();
-      }
-      /**
-       * <code>.com.example.demo.service.meetingService.User user2 = 2;</code>
-       */
-      public com.example.demo.service.meetingService.Book.UserOrBuilder getUser2OrBuilder() {
-        if (user2Builder_ != null) {
-          return user2Builder_.getMessageOrBuilder();
-        } else {
-          return user2_ == null ?
-              com.example.demo.service.meetingService.Book.User.getDefaultInstance() : user2_;
-        }
-      }
-      /**
-       * <code>.com.example.demo.service.meetingService.User user2 = 2;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.example.demo.service.meetingService.Book.User, com.example.demo.service.meetingService.Book.User.Builder, com.example.demo.service.meetingService.Book.UserOrBuilder> 
-          getUser2FieldBuilder() {
-        if (user2Builder_ == null) {
-          user2Builder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.example.demo.service.meetingService.Book.User, com.example.demo.service.meetingService.Book.User.Builder, com.example.demo.service.meetingService.Book.UserOrBuilder>(
-                  getUser2(),
-                  getParentForChildren(),
-                  isClean());
-          user2_ = null;
-        }
-        return user2Builder_;
+        return userBuilder_;
       }
 
       private com.google.protobuf.Timestamp time_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
           com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> timeBuilder_;
       /**
-       * <code>.google.protobuf.Timestamp time = 3;</code>
+       * <code>.google.protobuf.Timestamp time = 4;</code>
        */
       public boolean hasTime() {
         return timeBuilder_ != null || time_ != null;
       }
       /**
-       * <code>.google.protobuf.Timestamp time = 3;</code>
+       * <code>.google.protobuf.Timestamp time = 4;</code>
        */
       public com.google.protobuf.Timestamp getTime() {
         if (timeBuilder_ == null) {
@@ -860,7 +729,7 @@ public final class Book {
         }
       }
       /**
-       * <code>.google.protobuf.Timestamp time = 3;</code>
+       * <code>.google.protobuf.Timestamp time = 4;</code>
        */
       public Builder setTime(com.google.protobuf.Timestamp value) {
         if (timeBuilder_ == null) {
@@ -876,7 +745,7 @@ public final class Book {
         return this;
       }
       /**
-       * <code>.google.protobuf.Timestamp time = 3;</code>
+       * <code>.google.protobuf.Timestamp time = 4;</code>
        */
       public Builder setTime(
           com.google.protobuf.Timestamp.Builder builderForValue) {
@@ -890,7 +759,7 @@ public final class Book {
         return this;
       }
       /**
-       * <code>.google.protobuf.Timestamp time = 3;</code>
+       * <code>.google.protobuf.Timestamp time = 4;</code>
        */
       public Builder mergeTime(com.google.protobuf.Timestamp value) {
         if (timeBuilder_ == null) {
@@ -908,7 +777,7 @@ public final class Book {
         return this;
       }
       /**
-       * <code>.google.protobuf.Timestamp time = 3;</code>
+       * <code>.google.protobuf.Timestamp time = 4;</code>
        */
       public Builder clearTime() {
         if (timeBuilder_ == null) {
@@ -922,7 +791,7 @@ public final class Book {
         return this;
       }
       /**
-       * <code>.google.protobuf.Timestamp time = 3;</code>
+       * <code>.google.protobuf.Timestamp time = 4;</code>
        */
       public com.google.protobuf.Timestamp.Builder getTimeBuilder() {
         
@@ -930,7 +799,7 @@ public final class Book {
         return getTimeFieldBuilder().getBuilder();
       }
       /**
-       * <code>.google.protobuf.Timestamp time = 3;</code>
+       * <code>.google.protobuf.Timestamp time = 4;</code>
        */
       public com.google.protobuf.TimestampOrBuilder getTimeOrBuilder() {
         if (timeBuilder_ != null) {
@@ -941,7 +810,7 @@ public final class Book {
         }
       }
       /**
-       * <code>.google.protobuf.Timestamp time = 3;</code>
+       * <code>.google.protobuf.Timestamp time = 4;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
@@ -2054,22 +1923,21 @@ public final class Book {
     java.lang.String[] descriptorData = {
       "\n\nbook.proto\022\'com.example.demo.service.m" +
       "eetingService\032\036google/protobuf/wrappers." +
-      "proto\032\037google/protobuf/timestamp.proto\"\257" +
-      "\001\n\007Meeting\022<\n\005user1\030\001 \001(\0132-.com.example." +
-      "demo.service.meetingService.User\022<\n\005user" +
-      "2\030\002 \001(\0132-.com.example.demo.service.meeti" +
-      "ngService.User\022(\n\004time\030\003 \001(\0132\032.google.pr" +
-      "otobuf.Timestamp\"V\n\004User\022\n\n\002id\030\001 \001(\005\022\014\n\004" +
-      "name\030\002 \001(\t\022\r\n\005email\030\003 \001(\t\022\023\n\013phoneNumber" +
-      "\030\004 \001(\t\022\020\n\010deviceID\030\005 \001(\t2\264\002\n\016MeetingMana" +
-      "ger\022\\\n\013bookMeeting\0220.com.example.demo.se" +
-      "rvice.meetingService.Meeting\032\033.google.pr" +
-      "otobuf.Int32Value\022b\n\017getUserMeetings\022\033.g" +
-      "oogle.protobuf.Int32Value\0320.com.example." +
-      "demo.service.meetingService.Meeting0\001\022`\n" +
-      "\rcountMeetings\0220.com.example.demo.servic" +
-      "e.meetingService.Meeting\032\033.google.protob" +
-      "uf.Int32Value(\001b\006proto3"
+      "proto\032\037google/protobuf/timestamp.proto\"|" +
+      "\n\007Meeting\022\n\n\002id\030\001 \001(\005\022;\n\004user\030\002 \001(\0132-.co" +
+      "m.example.demo.service.meetingService.Us" +
+      "er\022(\n\004time\030\004 \001(\0132\032.google.protobuf.Times" +
+      "tamp\"V\n\004User\022\n\n\002id\030\001 \001(\005\022\014\n\004name\030\002 \001(\t\022\r" +
+      "\n\005email\030\003 \001(\t\022\023\n\013phoneNumber\030\004 \001(\t\022\020\n\010de" +
+      "viceID\030\005 \001(\t2\264\002\n\016MeetingManager\022\\\n\013bookM" +
+      "eeting\0220.com.example.demo.service.meetin" +
+      "gService.Meeting\032\033.google.protobuf.Int32" +
+      "Value\022b\n\017getUserMeetings\022\033.google.protob" +
+      "uf.Int32Value\0320.com.example.demo.service" +
+      ".meetingService.Meeting0\001\022`\n\rcountMeetin" +
+      "gs\0220.com.example.demo.service.meetingSer" +
+      "vice.Meeting\032\033.google.protobuf.Int32Valu" +
+      "e(\001b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -2090,7 +1958,7 @@ public final class Book {
     internal_static_com_example_demo_service_meetingService_Meeting_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_example_demo_service_meetingService_Meeting_descriptor,
-        new java.lang.String[] { "User1", "User2", "Time", });
+        new java.lang.String[] { "Id", "User", "Time", });
     internal_static_com_example_demo_service_meetingService_User_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_com_example_demo_service_meetingService_User_fieldAccessorTable = new
