@@ -16,7 +16,7 @@ public class UserManagerImpl extends UserManagerGrpc.UserManagerImplBase {
 
     public UserManagerImpl() throws IOException {
         this.userStorage = new HashMap<>();
-        userFileStorage = new File("users.txt");
+        userFileStorage = new File("usersDB.txt");
         userFileStorage.createNewFile();
         readFromFile();
     }

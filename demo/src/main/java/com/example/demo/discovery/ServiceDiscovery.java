@@ -26,12 +26,7 @@ public class ServiceDiscovery {
 
         public void serviceResolved(ServiceEvent event) {
             System.out.println("Service resolved: " + event.getInfo());
-
             this.serviceInfo = event.getInfo();
-            //int port = serviceInfo.getPort();
-            //String path = serviceInfo.getNiceTextString().split("=")[1];
-            //String url = "http://localhost:" + port + "/" + path;
-            //System.out.println(" --- sending request to " + url);
         }
 
         public ServiceInfo getServiceInfo() {

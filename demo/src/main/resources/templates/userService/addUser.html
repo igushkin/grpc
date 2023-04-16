@@ -7,7 +7,10 @@
 <body>
 
 <h1>Learning Springboot with HTML Form - User input</h1>
-<form action="http://localhost:8080/user/add" method="post">
+<form action="http://localhost:8080/user-manager/create-form" method="post">
+    <label for="id">User id :</label> <br/>
+    <input type="number" name="id" id="id"/> <br/>
+
     <label for="name">Name :</label> <br/>
     <input type="text" name="name" id="name"/> <br/>
 
@@ -17,7 +20,7 @@
     <label for="phoneNumber">Phone number :</label> <br/>
     <input type="text" name="phoneNumber" id="phoneNumber"/> <br/>
 
-    <label for="deviceID">Phone number :</label> <br/>
+    <label for="deviceID">Device ID :</label> <br/>
     <input type="text" name="deviceID" id="deviceID"/> <br/>
 
     <br/>
