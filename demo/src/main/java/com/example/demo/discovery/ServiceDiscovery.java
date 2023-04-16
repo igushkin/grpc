@@ -52,7 +52,7 @@ public class ServiceDiscovery {
             jmdns.addServiceListener(type, listener);
 
             // Wait a bit
-            Thread.sleep(20000);
+            Thread.sleep(1000);
 
             // Return service info
             return listener.getServiceInfo();

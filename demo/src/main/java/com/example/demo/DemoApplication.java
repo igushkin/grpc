@@ -1,5 +1,6 @@
 package com.example.demo;
 
+import com.example.demo.service.meetingService.MeetingServiceJmDNS;
 import com.example.demo.service.userService.UserService;
 import com.example.demo.service.userService.UserServiceJmDNS;
 import org.springframework.boot.SpringApplication;
@@ -15,6 +16,9 @@ public class DemoApplication {
         // Start and register service 1
         UserServiceJmDNS a = new UserServiceJmDNS();
         a.start();
+
+        MeetingServiceJmDNS b = new MeetingServiceJmDNS();
+        b.start();
 
         //a.blockUntilShutdown();
         SpringApplication.run(DemoApplication.class, args);

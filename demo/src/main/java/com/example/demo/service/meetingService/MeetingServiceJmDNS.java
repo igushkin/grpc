@@ -1,4 +1,4 @@
-package com.example.demo.service.userService;
+package com.example.demo.service.meetingService;
 
 import io.grpc.Server;
 import io.grpc.ServerBuilder;
@@ -8,28 +8,27 @@ import javax.jmdns.ServiceInfo;
 import java.io.IOException;
 import java.net.InetAddress;
 
-import static com.example.demo.service.userService.MyJmDNS.register;
 
-public class UserServiceJmDNS {
+public class MeetingServiceJmDNS {
 
     private Server server;
 
     public void start() throws IOException, InterruptedException {
         /* The port on which the server should run */
-        int port = 50052;
+        int port = 50053;
         server = ServerBuilder.forPort(port)
-                .addService(new UserManagerImpl())
+                .addService(new MeetingManagerImpl())
                 .build()
                 .start();
 
         Runtime.getRuntime().addShutdownHook(new Thread(() -> {
             // Use stderr here since the logger may have been reset by its JVM shutdown hook.
-            UserServiceJmDNS.this.stop();
+            MeetingServiceJmDNS.this.stop();
         }));
 
         System.out.println("Server started on port: " + port);
 
-        register();
+        MyJmDNS.register();
     }
 
     private void stop() {
@@ -52,12 +51,12 @@ class MyJmDNS {
     public static void register() throws IOException, InterruptedException {
         JmDNS jmdns = JmDNS.create(InetAddress.getLocalHost());
 
-        String service_type = "_http._tcp.local.";
-        String service_name = "example";
+        String service_type = "_meeting._tcp.local.";
+        String service_name = "exampleasd";
         // int service_port = 1234;
         //int service_port = Integer.valueOf( prop.getProperty("service_port") );// #.50051;
-        int service_port = 50052;
-        String service_description_properties = "service_description";
+        int service_port = 50053;
+        String service_description_properties = "service_descriptionasdsad";
 
         // Register a service
         ServiceInfo serviceInfo = ServiceInfo.create(service_type, service_name, service_port, service_description_properties);
