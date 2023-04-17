@@ -1,6 +1,7 @@
-<!DOCTYPE HTML>
-<html xmlns:th="https://www.thymeleaf.org">
+<!DOCTYPE html>
+<html>
 <head>
+
     <title>Getting Started: Handling Form Submission</title>
 
     <!-- Required meta tags -->
@@ -13,21 +14,32 @@
 </head>
 <body>
 <div class="container">
-    <h1>Automated Scheduling Application</h1>
+    <h1>User Manager</h1>
     <div class="row">
         <div class="col">
-            <ul class="list-group">
-                <li class="list-group-item"><a href="http://localhost:8080/user-manager">User Manager (Service 1)</a>
-                </li>
-                <li class="list-group-item"><a href="http://localhost:8080/meeting-manager">Meeting Manager (Service
-                    2)</a></li>
-                <li class="list-group-item"><a href="http://localhost:8080/notification-manager">Notification Manager
-                    (Service 3)</a></li>
-            </ul>
+            <form action="http://localhost:8080/user-manager/create-form" method="post">
+                <label for="id">User id :</label> <br/>
+                <input type="number" name="id" id="id"/> <br/>
 
+                <label for="name">Name :</label> <br/>
+                <input type="text" name="name" id="name"/> <br/>
+
+                <label for="email">Email :</label> <br/>
+                <input type="email" id="email" name="email"/> <br/>
+
+                <label for="phoneNumber">Phone number :</label> <br/>
+                <input type="text" name="phoneNumber" id="phoneNumber"/> <br/>
+
+                <label for="deviceID">Device ID :</label> <br/>
+                <input type="text" name="deviceID" id="deviceID"/> <br/>
+
+                <br/>
+                <button type="submit">Submit</button>
+            </form>
         </div>
     </div>
 </div>
+
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"

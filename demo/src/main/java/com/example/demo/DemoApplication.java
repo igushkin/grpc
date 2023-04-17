@@ -1,18 +1,18 @@
 package com.example.demo;
 
-import com.example.demo.service.meetingService.MeetingServiceJmDNS;
-import com.example.demo.service.userService.UserService;
-import com.example.demo.service.userService.UserServiceJmDNS;
+
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+
 import java.io.IOException;
+import java.util.Properties;
 
 @SpringBootApplication
 public class DemoApplication {
 
-    public static void main(String[] args) throws IOException, InterruptedException {
-
+    public static void main(String[] args) throws IOException {
+        /*
         // Start and register service 1
         UserServiceJmDNS a = new UserServiceJmDNS();
         a.start();
@@ -20,7 +20,7 @@ public class DemoApplication {
         MeetingServiceJmDNS b = new MeetingServiceJmDNS();
         b.start();
 
-        //a.blockUntilShutdown();
+        //a.blockUntilShutdown();*/
         SpringApplication.run(DemoApplication.class, args);
     }
 

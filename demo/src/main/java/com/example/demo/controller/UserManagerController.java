@@ -29,7 +29,7 @@ public class UserManagerController {
 
     @GetMapping
     public ModelAndView userManager() {
-        ModelAndView modelAndView = new ModelAndView("userService/methodsMenu.html");
+        ModelAndView modelAndView = new ModelAndView("userService/serviceMenu.html");
         return modelAndView;
     }
 
@@ -41,7 +41,7 @@ public class UserManagerController {
         ManagedChannel channel = getChannel(userService);
         List<UserService.User> users = getUsers(channel);
 
-        ModelAndView modelAndView = new ModelAndView("userService/getAllUsers.html");
+        ModelAndView modelAndView = new ModelAndView("userService/method/getAllUsers.html");
         modelAndView.addObject("model", users);
         return modelAndView;
     }
@@ -50,7 +50,7 @@ public class UserManagerController {
     // Add new user (unary request)
     @GetMapping("/create-form")
     public ModelAndView addUser() {
-        ModelAndView modelAndView = new ModelAndView("userService/addUser.html");
+        ModelAndView modelAndView = new ModelAndView("userService/method/addUser.html");
         return modelAndView;
     }
 
@@ -71,7 +71,7 @@ public class UserManagerController {
         UserManagerGrpc.UserManagerBlockingStub blockingStub = UserManagerGrpc.newBlockingStub(channel);
         blockingStub.addUser(newUser);
 
-        ModelAndView modelAndView = new ModelAndView("userService/addUser.html");
+        ModelAndView modelAndView = new ModelAndView("userService/method/addUser.html");
         return modelAndView;
     }
 

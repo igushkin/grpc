@@ -42,7 +42,7 @@ public class MainController {
 /*
     @GetMapping("/user-manager")
     public ModelAndView userManager() {
-        ModelAndView modelAndView = new ModelAndView("service1/methodsMenu.html");
+        ModelAndView modelAndView = new ModelAndView("service1/serviceMenu.html");
         return modelAndView;
     }
 
