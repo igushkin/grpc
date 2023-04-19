@@ -39,14 +39,24 @@ public final class NotificationService {
         getUserEmailBytes();
 
     /**
-     * <code>string message = 4;</code>
+     * <code>string subject = 4;</code>
      */
-    java.lang.String getMessage();
+    java.lang.String getSubject();
     /**
-     * <code>string message = 4;</code>
+     * <code>string subject = 4;</code>
      */
     com.google.protobuf.ByteString
-        getMessageBytes();
+        getSubjectBytes();
+
+    /**
+     * <code>string msg = 5;</code>
+     */
+    java.lang.String getMsg();
+    /**
+     * <code>string msg = 5;</code>
+     */
+    com.google.protobuf.ByteString
+        getMsgBytes();
   }
   /**
    * Protobuf type {@code com.example.demo.service.notificationService.Notification}
@@ -64,7 +74,8 @@ public final class NotificationService {
       id_ = 0;
       userID_ = 0;
       userEmail_ = "";
-      message_ = "";
+      subject_ = "";
+      msg_ = "";
     }
 
     @java.lang.Override
@@ -110,7 +121,13 @@ public final class NotificationService {
             case 34: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              message_ = s;
+              subject_ = s;
+              break;
+            }
+            case 42: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              msg_ = s;
               break;
             }
             default: {
@@ -197,34 +214,68 @@ public final class NotificationService {
       }
     }
 
-    public static final int MESSAGE_FIELD_NUMBER = 4;
-    private volatile java.lang.Object message_;
+    public static final int SUBJECT_FIELD_NUMBER = 4;
+    private volatile java.lang.Object subject_;
     /**
-     * <code>string message = 4;</code>
+     * <code>string subject = 4;</code>
      */
-    public java.lang.String getMessage() {
-      java.lang.Object ref = message_;
+    public java.lang.String getSubject() {
+      java.lang.Object ref = subject_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        message_ = s;
+        subject_ = s;
         return s;
       }
     }
     /**
-     * <code>string message = 4;</code>
+     * <code>string subject = 4;</code>
      */
     public com.google.protobuf.ByteString
-        getMessageBytes() {
-      java.lang.Object ref = message_;
+        getSubjectBytes() {
+      java.lang.Object ref = subject_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        message_ = b;
+        subject_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int MSG_FIELD_NUMBER = 5;
+    private volatile java.lang.Object msg_;
+    /**
+     * <code>string msg = 5;</code>
+     */
+    public java.lang.String getMsg() {
+      java.lang.Object ref = msg_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        msg_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string msg = 5;</code>
+     */
+    public com.google.protobuf.ByteString
+        getMsgBytes() {
+      java.lang.Object ref = msg_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        msg_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -254,8 +305,11 @@ public final class NotificationService {
       if (!getUserEmailBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, userEmail_);
       }
-      if (!getMessageBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, message_);
+      if (!getSubjectBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, subject_);
+      }
+      if (!getMsgBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, msg_);
       }
       unknownFields.writeTo(output);
     }
@@ -277,8 +331,11 @@ public final class NotificationService {
       if (!getUserEmailBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, userEmail_);
       }
-      if (!getMessageBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, message_);
+      if (!getSubjectBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, subject_);
+      }
+      if (!getMsgBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, msg_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -302,8 +359,10 @@ public final class NotificationService {
           == other.getUserID());
       result = result && getUserEmail()
           .equals(other.getUserEmail());
-      result = result && getMessage()
-          .equals(other.getMessage());
+      result = result && getSubject()
+          .equals(other.getSubject());
+      result = result && getMsg()
+          .equals(other.getMsg());
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -321,8 +380,10 @@ public final class NotificationService {
       hash = (53 * hash) + getUserID();
       hash = (37 * hash) + USEREMAIL_FIELD_NUMBER;
       hash = (53 * hash) + getUserEmail().hashCode();
-      hash = (37 * hash) + MESSAGE_FIELD_NUMBER;
-      hash = (53 * hash) + getMessage().hashCode();
+      hash = (37 * hash) + SUBJECT_FIELD_NUMBER;
+      hash = (53 * hash) + getSubject().hashCode();
+      hash = (37 * hash) + MSG_FIELD_NUMBER;
+      hash = (53 * hash) + getMsg().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -462,7 +523,9 @@ public final class NotificationService {
 
         userEmail_ = "";
 
-        message_ = "";
+        subject_ = "";
+
+        msg_ = "";
 
         return this;
       }
@@ -493,7 +556,8 @@ public final class NotificationService {
         result.id_ = id_;
         result.userID_ = userID_;
         result.userEmail_ = userEmail_;
-        result.message_ = message_;
+        result.subject_ = subject_;
+        result.msg_ = msg_;
         onBuilt();
         return result;
       }
@@ -552,8 +616,12 @@ public final class NotificationService {
           userEmail_ = other.userEmail_;
           onChanged();
         }
-        if (!other.getMessage().isEmpty()) {
-          message_ = other.message_;
+        if (!other.getSubject().isEmpty()) {
+          subject_ = other.subject_;
+          onChanged();
+        }
+        if (!other.getMsg().isEmpty()) {
+          msg_ = other.msg_;
           onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -706,71 +774,140 @@ public final class NotificationService {
         return this;
       }
 
-      private java.lang.Object message_ = "";
+      private java.lang.Object subject_ = "";
       /**
-       * <code>string message = 4;</code>
+       * <code>string subject = 4;</code>
        */
-      public java.lang.String getMessage() {
-        java.lang.Object ref = message_;
+      public java.lang.String getSubject() {
+        java.lang.Object ref = subject_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          message_ = s;
+          subject_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>string message = 4;</code>
+       * <code>string subject = 4;</code>
        */
       public com.google.protobuf.ByteString
-          getMessageBytes() {
-        java.lang.Object ref = message_;
+          getSubjectBytes() {
+        java.lang.Object ref = subject_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          message_ = b;
+          subject_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <code>string message = 4;</code>
+       * <code>string subject = 4;</code>
        */
-      public Builder setMessage(
+      public Builder setSubject(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        message_ = value;
+        subject_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>string message = 4;</code>
+       * <code>string subject = 4;</code>
        */
-      public Builder clearMessage() {
+      public Builder clearSubject() {
         
-        message_ = getDefaultInstance().getMessage();
+        subject_ = getDefaultInstance().getSubject();
         onChanged();
         return this;
       }
       /**
-       * <code>string message = 4;</code>
+       * <code>string subject = 4;</code>
        */
-      public Builder setMessageBytes(
+      public Builder setSubjectBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        message_ = value;
+        subject_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object msg_ = "";
+      /**
+       * <code>string msg = 5;</code>
+       */
+      public java.lang.String getMsg() {
+        java.lang.Object ref = msg_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          msg_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string msg = 5;</code>
+       */
+      public com.google.protobuf.ByteString
+          getMsgBytes() {
+        java.lang.Object ref = msg_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          msg_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string msg = 5;</code>
+       */
+      public Builder setMsg(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        msg_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string msg = 5;</code>
+       */
+      public Builder clearMsg() {
+        
+        msg_ = getDefaultInstance().getMsg();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string msg = 5;</code>
+       */
+      public Builder setMsgBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        msg_ = value;
         onChanged();
         return this;
       }
@@ -843,13 +980,15 @@ public final class NotificationService {
     java.lang.String[] descriptorData = {
       "\n\031notificationService.proto\022,com.example" +
       ".demo.service.notificationService\032\036googl" +
-      "e/protobuf/wrappers.proto\"N\n\014Notificatio" +
+      "e/protobuf/wrappers.proto\"[\n\014Notificatio" +
       "n\022\n\n\002id\030\001 \001(\005\022\016\n\006userID\030\002 \001(\005\022\021\n\tuserEma" +
-      "il\030\003 \001(\t\022\017\n\007message\030\004 \001(\t2\206\001\n\023Notificati" +
-      "onManager\022o\n\020sendNotification\022:.com.exam" +
-      "ple.demo.service.notificationService.Not" +
-      "ification\032\033.google.protobuf.Int32Value(\001" +
-      "0\001b\006proto3"
+      "il\030\003 \001(\t\022\017\n\007subject\030\004 \001(\t\022\013\n\003msg\030\005 \001(\t2\310" +
+      "\001\n\023NotificationManager\022o\n\020sendNotificati" +
+      "on\022:.com.example.demo.service.notificati" +
+      "onService.Notification\032\033.google.protobuf" +
+      ".Int32Value(\0010\001\022@\n\004test\022\033.google.protobu" +
+      "f.Int32Value\032\033.google.protobuf.Int32Valu" +
+      "eb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -869,7 +1008,7 @@ public final class NotificationService {
     internal_static_com_example_demo_service_notificationService_Notification_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_example_demo_service_notificationService_Notification_descriptor,
-        new java.lang.String[] { "Id", "UserID", "UserEmail", "Message", });
+        new java.lang.String[] { "Id", "UserID", "UserEmail", "Subject", "Msg", });
     com.google.protobuf.WrappersProto.getDescriptor();
   }
 

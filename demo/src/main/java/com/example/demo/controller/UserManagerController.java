@@ -11,11 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.jmdns.ServiceInfo;
-import java.io.IOException;
-import java.time.*;
-import java.time.format.DateTimeFormatter;
 import java.util.*;
-import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/user-manager")
@@ -24,7 +20,7 @@ public class UserManagerController {
     private ServiceInfo userService;
 
     public UserManagerController() throws InterruptedException {
-        userService = ServiceDiscovery.discover("_http._tcp.local.");
+        userService = ServiceDiscovery.getServiceInfo("_http._tcp.local.");
     }
 
     @GetMapping

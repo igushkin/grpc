@@ -28,8 +28,8 @@ public class MainController {
     private ServiceInfo service3;
 
     public MainController() throws InterruptedException {
-        userService = ServiceDiscovery.discover("_http._tcp.local.");
-        meetingService = ServiceDiscovery.discover("_meeting._tcp.local.");
+        userService = ServiceDiscovery.getServiceInfo("_http._tcp.local.");
+        meetingService = ServiceDiscovery.getServiceInfo("_meeting._tcp.local.");
     }
 
     // Main page

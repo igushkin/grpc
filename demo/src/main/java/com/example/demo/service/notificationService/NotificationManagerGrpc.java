@@ -59,6 +59,38 @@ public final class NotificationManagerGrpc {
      return getSendNotificationMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.google.protobuf.Int32Value,
+      com.google.protobuf.Int32Value> getTestMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "test",
+      requestType = com.google.protobuf.Int32Value.class,
+      responseType = com.google.protobuf.Int32Value.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.google.protobuf.Int32Value,
+      com.google.protobuf.Int32Value> getTestMethod() {
+    io.grpc.MethodDescriptor<com.google.protobuf.Int32Value, com.google.protobuf.Int32Value> getTestMethod;
+    if ((getTestMethod = NotificationManagerGrpc.getTestMethod) == null) {
+      synchronized (NotificationManagerGrpc.class) {
+        if ((getTestMethod = NotificationManagerGrpc.getTestMethod) == null) {
+          NotificationManagerGrpc.getTestMethod = getTestMethod = 
+              io.grpc.MethodDescriptor.<com.google.protobuf.Int32Value, com.google.protobuf.Int32Value>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(
+                  "com.example.demo.service.notificationService.NotificationManager", "test"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.protobuf.Int32Value.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.protobuf.Int32Value.getDefaultInstance()))
+                  .setSchemaDescriptor(new NotificationManagerMethodDescriptorSupplier("test"))
+                  .build();
+          }
+        }
+     }
+     return getTestMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -93,6 +125,13 @@ public final class NotificationManagerGrpc {
       return asyncUnimplementedStreamingCall(getSendNotificationMethod(), responseObserver);
     }
 
+    /**
+     */
+    public void test(com.google.protobuf.Int32Value request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Int32Value> responseObserver) {
+      asyncUnimplementedUnaryCall(getTestMethod(), responseObserver);
+    }
+
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
@@ -102,6 +141,13 @@ public final class NotificationManagerGrpc {
                 com.example.demo.service.notificationService.NotificationService.Notification,
                 com.google.protobuf.Int32Value>(
                   this, METHODID_SEND_NOTIFICATION)))
+          .addMethod(
+            getTestMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                com.google.protobuf.Int32Value,
+                com.google.protobuf.Int32Value>(
+                  this, METHODID_TEST)))
           .build();
     }
   }
@@ -131,6 +177,14 @@ public final class NotificationManagerGrpc {
       return asyncBidiStreamingCall(
           getChannel().newCall(getSendNotificationMethod(), getCallOptions()), responseObserver);
     }
+
+    /**
+     */
+    public void test(com.google.protobuf.Int32Value request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Int32Value> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getTestMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -149,6 +203,13 @@ public final class NotificationManagerGrpc {
     protected NotificationManagerBlockingStub build(io.grpc.Channel channel,
         io.grpc.CallOptions callOptions) {
       return new NotificationManagerBlockingStub(channel, callOptions);
+    }
+
+    /**
+     */
+    public com.google.protobuf.Int32Value test(com.google.protobuf.Int32Value request) {
+      return blockingUnaryCall(
+          getChannel(), getTestMethod(), getCallOptions(), request);
     }
   }
 
@@ -169,9 +230,18 @@ public final class NotificationManagerGrpc {
         io.grpc.CallOptions callOptions) {
       return new NotificationManagerFutureStub(channel, callOptions);
     }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Int32Value> test(
+        com.google.protobuf.Int32Value request) {
+      return futureUnaryCall(
+          getChannel().newCall(getTestMethod(), getCallOptions()), request);
+    }
   }
 
-  private static final int METHODID_SEND_NOTIFICATION = 0;
+  private static final int METHODID_TEST = 0;
+  private static final int METHODID_SEND_NOTIFICATION = 1;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -190,6 +260,10 @@ public final class NotificationManagerGrpc {
     @java.lang.SuppressWarnings("unchecked")
     public void invoke(Req request, io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
+        case METHODID_TEST:
+          serviceImpl.test((com.google.protobuf.Int32Value) request,
+              (io.grpc.stub.StreamObserver<com.google.protobuf.Int32Value>) responseObserver);
+          break;
         default:
           throw new AssertionError();
       }
@@ -255,6 +329,7 @@ public final class NotificationManagerGrpc {
           serviceDescriptor = result = io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
               .setSchemaDescriptor(new NotificationManagerFileDescriptorSupplier())
               .addMethod(getSendNotificationMethod())
+              .addMethod(getTestMethod())
               .build();
         }
       }

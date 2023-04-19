@@ -1,27 +1,30 @@
 package com.example.demo;
 
 
+import com.example.demo.server.MeetingServiceServer;
+import com.example.demo.server.NotificationServiceServer;
+import com.example.demo.server.UserServiceServer;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 
 import java.io.IOException;
-import java.util.Properties;
 
 @SpringBootApplication
 public class DemoApplication {
 
-    public static void main(String[] args) throws IOException {
-        /*
-        // Start and register service 1
-        UserServiceJmDNS a = new UserServiceJmDNS();
-        a.start();
+    public static void main(String[] args) throws IOException, InterruptedException {
 
-        MeetingServiceJmDNS b = new MeetingServiceJmDNS();
-        b.start();
+        // Start and register services
+        UserServiceServer a = new UserServiceServer();
+        a.startAndRegister();
 
-        //a.blockUntilShutdown();*/
+        MeetingServiceServer b = new MeetingServiceServer();
+        b.startAndRegister();
+
+        NotificationServiceServer c = new NotificationServiceServer();
+        c.startAndRegister();
+
         SpringApplication.run(DemoApplication.class, args);
     }
-
 }

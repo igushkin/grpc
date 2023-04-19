@@ -25,8 +25,8 @@ public class MeetingManagerController {
     private ServiceInfo service3;
 
     public MeetingManagerController() throws InterruptedException {
-        userService = ServiceDiscovery.discover("_http._tcp.local.");
-        meetingService = ServiceDiscovery.discover("_meeting._tcp.local.");
+        userService = ServiceDiscovery.getServiceInfo("_http._tcp.local.");
+        meetingService = ServiceDiscovery.getServiceInfo("_meeting._tcp.local.");
     }
 
     @GetMapping()
