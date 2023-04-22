@@ -1,4 +1,4 @@
-package com.example.demo.discovery;
+package com.example.demo.serviceUse.serviceDiscovery;
 
 import javax.jmdns.ServiceEvent;
 import javax.jmdns.ServiceInfo;

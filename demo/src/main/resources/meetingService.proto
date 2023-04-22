@@ -3,12 +3,12 @@ syntax = "proto3";
 import "google/protobuf/wrappers.proto";
 import "google/protobuf/timestamp.proto";
 
-package com.example.demo.service.meetingService;
+package com.example.demo.serviceImpl.meetingService;
 
 service MeetingManager {
-    rpc bookMeeting(Meeting) returns (google.protobuf.Int32Value);
+    rpc addMeeting(Meeting) returns (google.protobuf.Int32Value);
     rpc getUserMeetings(google.protobuf.Int32Value) returns (stream Meeting);
-    rpc countMeetings(stream Meeting) returns (google.protobuf.Int32Value);
+    rpc getReport(stream google.protobuf.Int32Value) returns (Report);
 }
 
 message Meeting {
@@ -16,4 +16,10 @@ message Meeting {
     int32 userId = 2;
     string userName = 3;
     google.protobuf.Timestamp time = 4;
+}
+
+message Report {
+    int32 numOfMeetings = 1;
+    map<int32, double> statByDayOfTheWeek = 2;
+    map<int32, double> statByUser = 3;
 }

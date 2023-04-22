@@ -14,25 +14,34 @@
 </head>
 <body>
 <div class="container">
-    <h1>Meeting Manager</h1>
+    <h2 class="my-3">Meeting Manager</h2>
+    <h3 class="my-4">Sending email notifications</h3>
     <div class="row">
         <div class="col">
 
             <form action="http://localhost:8080/notification-manager/notify" method="post">
-                <select name="userEmails" multiple>
-                    <option value=""></option>
-                    <th:block th:each="user: ${users}">
-                        <option th:value="${user.email}" th:text="${user.name}"></option>
-                    </th:block>
-                </select>
 
-                <p><label fot="subject">Email subject:</label></p>
-                <p><input type="text" id="subject" name="subject" required size="10"></p>
+                <div class="mb-2 mt-2">
+                    <label for="userEmails">Select the recipient:</label>
+                    <select class="form-control" name="userEmails" id="userEmails" multiple>
+                        <option value=""></option>
+                        <th:block th:each="user: ${users}">
+                            <option th:value="${user.email}" th:text="${user.name}"></option>
+                        </th:block>
+                    </select>
+                </div>
 
-                <p><label fot="message">Message subject:</label></p>
-                <p><input type="text" id="message" name="message" required size="10"></p>
+                <div class="mb-2 mt-2">
+                    <label for="subject">Enter email subject:</label>
+                    <input class="form-control" type="text" id="subject" name="subject" required size="10">
+                </div>
 
-                <p><input type="submit" value="Submit"/> <input type="reset" value="Reset"/></p>
+                <div class="mb-2 mt-2">
+                    <label for="message">Enter message:</label>
+                    <textarea class="form-control" type="text" id="message" name="message" required></textarea>
+                </div>
+
+                <input class="btn btn-primary" type="submit" value="Submit"/>
             </form>
         </div>
     </div>

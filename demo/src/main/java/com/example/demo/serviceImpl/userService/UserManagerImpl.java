@@ -1,24 +1,25 @@
-package com.example.demo.service.userService;
+package com.example.demo.serviceImpl.userService;
 
-import com.example.demo.service.userService.UserManagerGrpc;
-import com.example.demo.service.userService.UserService;
 import com.google.protobuf.Int32Value;
 import com.google.protobuf.StringValue;
 import io.grpc.stub.StreamObserver;
 
 import java.io.*;
 import java.util.HashMap;
+import java.util.Map;
 
 public class UserManagerImpl extends UserManagerGrpc.UserManagerImplBase {
 
-    HashMap<Integer, UserService.User> userStorage;
-    File userFileStorage;
+    private final Map<Integer, UserService.User> userStorage;
+    private final File userFileStorage;
 
+    // Constructor
     public UserManagerImpl() throws IOException {
         this.userStorage = new HashMap<>();
         userFileStorage = new File("usersDB.txt");
         userFileStorage.createNewFile();
-        readFromFile();
+        // Restore data from the file
+        restoreData();
     }
 
     @Override
@@ -60,14 +61,13 @@ public class UserManagerImpl extends UserManagerGrpc.UserManagerImplBase {
         }
     }
 
-    private void readFromFile() throws IOException {
+    private void restoreData() throws IOException {
         try (FileInputStream input = new FileInputStream(userFileStorage)) {
             while (true) {
                 UserService.User user = UserService.User.parseDelimitedFrom(input);
                 if (user == null) { // parseDelimitedFrom returns null on EOF
                     break;
                 }
-
                 this.userStorage.put(user.getId(), user);
             }
         }

@@ -1,10 +1,9 @@
-package com.example.demo.discovery;
+package com.example.demo.serviceUse.serviceDiscovery;
 
 import javax.jmdns.JmDNS;
 import javax.jmdns.ServiceInfo;
 import java.io.IOException;
 import java.net.InetAddress;
-import java.net.UnknownHostException;
 import java.util.HashMap;
 
 public class ServiceDiscovery {

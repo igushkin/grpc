@@ -1,12 +1,13 @@
 syntax = "proto3";
 
 import "google/protobuf/wrappers.proto";
+import "google/protobuf/empty.proto";
 
-package com.example.demo.service.userService;
+package com.example.demo.serviceImpl.userService;
 
 service UserManager {
     rpc addUser(User) returns (google.protobuf.Int32Value);
-    rpc findUser(google.protobuf.StringValue) returns (stream User);
+    rpc getAllUsers(google.protobuf.Empty) returns (stream User);
 }
 
 message User {

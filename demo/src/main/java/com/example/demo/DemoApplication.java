@@ -1,9 +1,9 @@
 package com.example.demo;
 
 
-import com.example.demo.server.MeetingServiceServer;
-import com.example.demo.server.NotificationServiceServer;
-import com.example.demo.server.UserServiceServer;
+import com.example.demo.serviceServer.MeetingServiceServer;
+import com.example.demo.serviceServer.NotificationServer;
+import com.example.demo.serviceServer.UserServiceServer;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -22,7 +22,7 @@ public class DemoApplication {
         MeetingServiceServer b = new MeetingServiceServer();
         b.startAndRegister();
 
-        NotificationServiceServer c = new NotificationServiceServer();
+        NotificationServer c = new NotificationServer();
         c.startAndRegister();
 
         SpringApplication.run(DemoApplication.class, args);

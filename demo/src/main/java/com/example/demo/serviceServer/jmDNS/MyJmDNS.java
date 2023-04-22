@@ -1,4 +1,4 @@
-package com.example.demo.jmDNS;
+package com.example.demo.serviceServer.jmDNS;
 
 import javax.jmdns.JmDNS;
 import javax.jmdns.ServiceInfo;
@@ -11,6 +11,7 @@ public class MyJmDNS {
 
         // Register a service
         ServiceInfo serviceInfo = ServiceInfo.create(service_type, service_name, service_port, service_description);
+
         jmdns.registerService(serviceInfo);
 
         System.out.printf("Registering service with type %s and name %s \n", service_type, service_name);

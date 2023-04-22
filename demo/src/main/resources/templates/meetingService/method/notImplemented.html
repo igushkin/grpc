@@ -1,0 +1,155 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Handling Form Submission</title>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+<div class="container">
+    <h2 class="my-3">Meeting Manager</h2>
+    <h3 class="my-3">Build report</h3>
+    <div class="row">
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col" class="col-7">Parameter</th>
+                <th scope="col" class="col-5">Result</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>Total registered meetings in the system</td>
+                <td><span th:text="${numOfMeetings}"></span></td>
+            </tr>
+            <tr>
+                <td>Percentage of meetings by day of the week</td>
+                <td>
+                    <canvas id="weekChart"></canvas>
+                </td>
+            </tr>
+            <tr>
+                <td>Percentage of meetings by user</td>
+                <td>
+                    <canvas id="userChart"></canvas>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div id="names">
+    <th:block th:each="name: ${statByUser.keySet()}">
+        <span th:value="${name}"></span>
+    </th:block>
+</div>
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+
+<script>
+
+var xValues = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+var yValues = [[${statByDay}]];
+var barColors = getRandomColors(7);
+
+const weekChart = document.getElementById('weekChart');
+
+new Chart(weekChart, {
+    type: "doughnut",
+    data: {
+        labels: xValues,
+        datasets: [{
+            backgroundColor: barColors,
+            data: yValues
+        }]
+    },
+    options: {
+        plugins: {
+            tooltip: {
+                callbacks: {
+                    label: function(context) {
+                        context.formattedValue = context.formattedValue + "%";
+                    }
+                }
+            }
+        }
+    }
+});
+
+// User chart
+var xValues = [];
+var elements = document.querySelectorAll('#names span');
+for(var i=0;i<elements.length;i++){
+   xValues.push(elements[i].getAttribute("value"));
+}
+var yValues = [[${statByUser.values()}]];
+var barColors = getRandomColors(xValues.length);
+const userChart = document.getElementById('userChart');
+
+new Chart(userChart, {
+    type: "doughnut",
+    data: {
+        labels: xValues,
+        datasets: [{
+            backgroundColor: barColors,
+            data: yValues
+        }]
+    },
+    options: {
+        plugins: {
+            tooltip: {
+                callbacks: {
+                    label: function(context) {
+                        context.formattedValue = context.formattedValue + "%";
+                    }
+                }
+            }
+        }
+    }
+});
+
+function getRandomColors(size) {
+    var colors = [];
+
+    for (let i = 0; i < size; i++) {
+        colors.push(getRandomColor());
+    }
+
+    return colors;
+}
+
+function getRandomColor() {
+    var letters = '0123456789ABCDEF'.split('');
+    var color = '#';
+    for (var i = 0; i < 6; i++ ) {
+        color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+}
+
+
+
+
+
+</script>
+
+</body>
+</html>

@@ -1,16 +1,12 @@
-package com.example.demo.service.notificationService;
+package com.example.demo.serviceImpl.notificationService;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
 import static io.grpc.stub.ClientCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncServerStreamingCall;
 import static io.grpc.stub.ClientCalls.asyncUnaryCall;
 import static io.grpc.stub.ClientCalls.blockingServerStreamingCall;
 import static io.grpc.stub.ClientCalls.blockingUnaryCall;
 import static io.grpc.stub.ClientCalls.futureUnaryCall;
 import static io.grpc.stub.ServerCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncServerStreamingCall;
 import static io.grpc.stub.ServerCalls.asyncUnaryCall;
 import static io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall;
 import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
@@ -27,28 +23,28 @@ public final class NotificationManagerGrpc {
   public static final String SERVICE_NAME = "com.example.demo.service.notificationService.NotificationManager";
 
   // Static method descriptors that strictly reflect the proto.
-  private static volatile io.grpc.MethodDescriptor<com.example.demo.service.notificationService.NotificationService.Notification,
+  private static volatile io.grpc.MethodDescriptor<com.example.demo.serviceImpl.notificationService.NotificationService.Notification,
       com.google.protobuf.Int32Value> getSendNotificationMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "sendNotification",
-      requestType = com.example.demo.service.notificationService.NotificationService.Notification.class,
+      requestType = com.example.demo.serviceImpl.notificationService.NotificationService.Notification.class,
       responseType = com.google.protobuf.Int32Value.class,
       methodType = io.grpc.MethodDescriptor.MethodType.BIDI_STREAMING)
-  public static io.grpc.MethodDescriptor<com.example.demo.service.notificationService.NotificationService.Notification,
+  public static io.grpc.MethodDescriptor<com.example.demo.serviceImpl.notificationService.NotificationService.Notification,
       com.google.protobuf.Int32Value> getSendNotificationMethod() {
-    io.grpc.MethodDescriptor<com.example.demo.service.notificationService.NotificationService.Notification, com.google.protobuf.Int32Value> getSendNotificationMethod;
+    io.grpc.MethodDescriptor<com.example.demo.serviceImpl.notificationService.NotificationService.Notification, com.google.protobuf.Int32Value> getSendNotificationMethod;
     if ((getSendNotificationMethod = NotificationManagerGrpc.getSendNotificationMethod) == null) {
       synchronized (NotificationManagerGrpc.class) {
         if ((getSendNotificationMethod = NotificationManagerGrpc.getSendNotificationMethod) == null) {
           NotificationManagerGrpc.getSendNotificationMethod = getSendNotificationMethod = 
-              io.grpc.MethodDescriptor.<com.example.demo.service.notificationService.NotificationService.Notification, com.google.protobuf.Int32Value>newBuilder()
+              io.grpc.MethodDescriptor.<com.example.demo.serviceImpl.notificationService.NotificationService.Notification, com.google.protobuf.Int32Value>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.BIDI_STREAMING)
               .setFullMethodName(generateFullMethodName(
                   "com.example.demo.service.notificationService.NotificationManager", "sendNotification"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.example.demo.service.notificationService.NotificationService.Notification.getDefaultInstance()))
+                  com.example.demo.serviceImpl.notificationService.NotificationService.Notification.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.google.protobuf.Int32Value.getDefaultInstance()))
                   .setSchemaDescriptor(new NotificationManagerMethodDescriptorSupplier("sendNotification"))
@@ -120,7 +116,7 @@ public final class NotificationManagerGrpc {
 
     /**
      */
-    public io.grpc.stub.StreamObserver<com.example.demo.service.notificationService.NotificationService.Notification> sendNotification(
+    public io.grpc.stub.StreamObserver<com.example.demo.serviceImpl.notificationService.NotificationService.Notification> sendNotification(
         io.grpc.stub.StreamObserver<com.google.protobuf.Int32Value> responseObserver) {
       return asyncUnimplementedStreamingCall(getSendNotificationMethod(), responseObserver);
     }
@@ -138,7 +134,7 @@ public final class NotificationManagerGrpc {
             getSendNotificationMethod(),
             asyncBidiStreamingCall(
               new MethodHandlers<
-                com.example.demo.service.notificationService.NotificationService.Notification,
+                com.example.demo.serviceImpl.notificationService.NotificationService.Notification,
                 com.google.protobuf.Int32Value>(
                   this, METHODID_SEND_NOTIFICATION)))
           .addMethod(
@@ -172,7 +168,7 @@ public final class NotificationManagerGrpc {
 
     /**
      */
-    public io.grpc.stub.StreamObserver<com.example.demo.service.notificationService.NotificationService.Notification> sendNotification(
+    public io.grpc.stub.StreamObserver<com.example.demo.serviceImpl.notificationService.NotificationService.Notification> sendNotification(
         io.grpc.stub.StreamObserver<com.google.protobuf.Int32Value> responseObserver) {
       return asyncBidiStreamingCall(
           getChannel().newCall(getSendNotificationMethod(), getCallOptions()), responseObserver);
@@ -289,7 +285,7 @@ public final class NotificationManagerGrpc {
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.FileDescriptor getFileDescriptor() {
-      return com.example.demo.service.notificationService.NotificationService.getDescriptor();
+      return com.example.demo.serviceImpl.notificationService.NotificationService.getDescriptor();
     }
 
     @java.lang.Override

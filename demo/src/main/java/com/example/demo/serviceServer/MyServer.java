@@ -1,7 +1,7 @@
-package com.example.demo.server;
+package com.example.demo.serviceServer;
 
-import com.example.demo.jmDNS.MyJmDNS;
-import com.example.demo.service.userService.UserManagerImpl;
+import com.example.demo.serviceServer.jmDNS.MyJmDNS;
+import io.grpc.BindableService;
 import io.grpc.Server;
 import io.grpc.ServerBuilder;
 
@@ -12,10 +12,10 @@ public abstract class MyServer {
 
     public abstract void startAndRegister() throws IOException, InterruptedException;
 
-    protected void startAndRegister(String serviceType, String serviceName, String serviceDescription, int port) throws IOException, InterruptedException {
+    protected void startAndRegister(BindableService bindableService, String serviceType, String serviceName, String serviceDescription, int port) throws IOException, InterruptedException {
         /* The port on which the server should run */
         server = ServerBuilder.forPort(port)
-                .addService(new UserManagerImpl())
+                .addService(bindableService)
                 .build()
                 .start();
 

@@ -1,6 +1,5 @@
-package com.example.demo.service.notificationService;
+package com.example.demo.serviceImpl.notificationService;
 
-import com.example.demo.service.userService.UserService;
 import com.google.protobuf.Int32Value;
 import io.grpc.stub.StreamObserver;
 import jakarta.mail.*;
@@ -26,7 +25,6 @@ public class NotificationManagerImpl extends NotificationManagerGrpc.Notificatio
     public StreamObserver<NotificationService.Notification> sendNotification(StreamObserver<Int32Value> responseObserver) {
 
         return new StreamObserver<>() {
-
             @Override
             public void onNext(NotificationService.Notification notification) {
                 try {
@@ -44,8 +42,7 @@ public class NotificationManagerImpl extends NotificationManagerGrpc.Notificatio
 
             @Override
             public void onCompleted() {
-                System.out.println("receiving convertBase completed ");
-                //completed too
+                // Task completed
                 responseObserver.onCompleted();
             }
         };

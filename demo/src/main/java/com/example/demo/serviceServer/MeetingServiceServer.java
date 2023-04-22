@@ -1,6 +1,6 @@
-package com.example.demo.server;
+package com.example.demo.serviceServer;
 
-import com.example.demo.server.MyServer;
+import com.example.demo.serviceImpl.meetingService.MeetingManagerImpl;
 
 import java.io.IOException;
 
@@ -14,6 +14,6 @@ public class MeetingServiceServer extends MyServer {
 
     @Override
     public void startAndRegister() throws IOException, InterruptedException {
-        this.startAndRegister(SERVICE_TYPE, SERVICE_NAME, SERVICE_DESCRIPTION, PORT);
+        this.startAndRegister(new MeetingManagerImpl(), SERVICE_TYPE, SERVICE_NAME, SERVICE_DESCRIPTION, PORT);
     }
 }

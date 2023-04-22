@@ -2,7 +2,7 @@ syntax = "proto3";
 
 import "google/protobuf/wrappers.proto";
 
-package com.example.demo.service.notificationService;
+package com.example.demo.serviceImpl.notificationService;
 
 service NotificationManager {
     rpc sendNotification(stream Notification) returns (stream google.protobuf.Int32Value);

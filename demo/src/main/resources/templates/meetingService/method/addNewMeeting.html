@@ -12,18 +12,21 @@
 </head>
 <body>
 <div class="container">
-    <h1>Meeting Manager</h1>
+    <h2 class="my-3">Meeting Manager</h2>
+    <h3 class="my-4">Book a meeting with the user</h3>
     <div class="row">
         <div class="col">
 
             <form action="http://localhost:8080/meeting-manager/create-form" method="get">
-                <select name="userID">
-                    <option value=""></option>
-                    <th:block th:each="user: ${users}">
-                        <option th:value="${user.id}" th:text="${user.name}"></option>
-                    </th:block>
-                </select>
-                <p><input type="submit" value="Submit"/> <input type="reset" value="Reset"/></p>
+                <div class="mb-2 mt-2">
+                    <select class="form-control" name="userID">
+                        <option value=""></option>
+                        <th:block th:each="user: ${users}">
+                            <option th:value="${user.id}" th:text="${user.name}"></option>
+                        </th:block>
+                    </select>
+                </div>
+                <p><input class="btn btn-primary" type="submit" value="Select"/></p>
             </form>
         </div>
     </div>
@@ -31,24 +34,29 @@
         <div class="col">
             <th:block th:if="${userName != null}">
 
-                <p th:text="'Book a meeting with ' + ${userName}"></p>
+                <p><span th:text="'Book a meeting with ' + ${userName}"></span>. Select the date and time:</p>
 
                 <form action="http://localhost:8080/meeting-manager/create-form" method="post">
                     <input type="hidden" name="userID" th:value="${userID}">
                     <input type="hidden" name="userName" th:value="${userName}">
 
-                    <label for="meetingDate">Select meeting date:</label>
-                    <input type="date" id="meetingDate" name="meetingDate" value="2023-04-15">
+                    <div class="mb-2 mt-2">
+                        <label for="meetingDate">Select meeting date:</label>
+                        <input class="form-control" type="date" id="meetingDate" name="meetingDate" value="2023-04-15">
+                    </div>
 
-                    <label for="appt">Select meeting time:</label>
-                    <input type="time" id="appt" name="appt">
+                    <div class="mb-2 mt-2">
+                        <label for="appt">Select meeting time:</label>
+                        <input class="form-control" type="time" id="appt" name="appt">
+                    </div>
 
-                    <input type="submit">
+                    <input class="btn btn-primary" type="submit" value="Submit">
                 </form>
             </th:block>
         </div>
     </div>
 </div>
+
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
