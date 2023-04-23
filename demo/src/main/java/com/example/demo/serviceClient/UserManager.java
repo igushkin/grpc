@@ -1,10 +1,10 @@
-package com.example.demo.serviceUse;
+package com.example.demo.serviceClient;
 
 import com.example.demo.serviceServer.UserServiceServer;
 import com.example.demo.serviceImpl.userService.UserManagerGrpc;
 import com.example.demo.serviceImpl.userService.UserService;
-import com.example.demo.serviceUse.serviceDiscovery.ServiceDiscovery;
-import com.google.protobuf.StringValue;
+import com.example.demo.serviceClient.serviceDiscovery.ServiceDiscovery;
+import com.google.protobuf.Empty;
 import io.grpc.ManagedChannel;
 
 import javax.jmdns.ServiceInfo;
@@ -30,11 +30,18 @@ public class UserManager extends gRPCService {
         return user.getId();
     }
 
+    public static int updateUser(UserService.User user) {
+        ManagedChannel channel = getChannel(serviceInfo);
+        UserManagerGrpc.UserManagerBlockingStub blockingStub = UserManagerGrpc.newBlockingStub(channel);
+        blockingStub.updateUser(user);
+        return user.getId();
+    }
+
     public static List<UserService.User> getAllUsers() {
         ManagedChannel channel = getChannel(serviceInfo);
         UserManagerGrpc.UserManagerBlockingStub blockingStub = UserManagerGrpc.newBlockingStub(channel);
         List<UserService.User> users = new ArrayList<>();
-        Iterator<UserService.User> itr = blockingStub.findUser(StringValue.newBuilder().build());
+        Iterator<UserService.User> itr = blockingStub.getAllUsers(Empty.newBuilder().build());
         itr.forEachRemaining(users::add);
 
         return users;

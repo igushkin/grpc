@@ -7,6 +7,7 @@ package com.example.demo.serviceImpl.userService;
 
 service UserManager {
     rpc addUser(User) returns (google.protobuf.Int32Value);
+    rpc updateUser(User) returns (google.protobuf.Int32Value);
     rpc getAllUsers(google.protobuf.Empty) returns (stream User);
 }
 

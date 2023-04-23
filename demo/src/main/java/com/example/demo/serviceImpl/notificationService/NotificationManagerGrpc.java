@@ -2,11 +2,15 @@ package com.example.demo.serviceImpl.notificationService;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
 import static io.grpc.stub.ClientCalls.asyncBidiStreamingCall;
+import static io.grpc.stub.ClientCalls.asyncClientStreamingCall;
+import static io.grpc.stub.ClientCalls.asyncServerStreamingCall;
 import static io.grpc.stub.ClientCalls.asyncUnaryCall;
 import static io.grpc.stub.ClientCalls.blockingServerStreamingCall;
 import static io.grpc.stub.ClientCalls.blockingUnaryCall;
 import static io.grpc.stub.ClientCalls.futureUnaryCall;
 import static io.grpc.stub.ServerCalls.asyncBidiStreamingCall;
+import static io.grpc.stub.ServerCalls.asyncClientStreamingCall;
+import static io.grpc.stub.ServerCalls.asyncServerStreamingCall;
 import static io.grpc.stub.ServerCalls.asyncUnaryCall;
 import static io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall;
 import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
@@ -20,33 +24,33 @@ public final class NotificationManagerGrpc {
 
   private NotificationManagerGrpc() {}
 
-  public static final String SERVICE_NAME = "com.example.demo.service.notificationService.NotificationManager";
+  public static final String SERVICE_NAME = "com.example.demo.serviceImpl.notificationService.NotificationManager";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<com.example.demo.serviceImpl.notificationService.NotificationService.Notification,
-      com.google.protobuf.Int32Value> getSendNotificationMethod;
+      com.google.protobuf.BoolValue> getSendNotificationMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "sendNotification",
       requestType = com.example.demo.serviceImpl.notificationService.NotificationService.Notification.class,
-      responseType = com.google.protobuf.Int32Value.class,
+      responseType = com.google.protobuf.BoolValue.class,
       methodType = io.grpc.MethodDescriptor.MethodType.BIDI_STREAMING)
   public static io.grpc.MethodDescriptor<com.example.demo.serviceImpl.notificationService.NotificationService.Notification,
-      com.google.protobuf.Int32Value> getSendNotificationMethod() {
-    io.grpc.MethodDescriptor<com.example.demo.serviceImpl.notificationService.NotificationService.Notification, com.google.protobuf.Int32Value> getSendNotificationMethod;
+      com.google.protobuf.BoolValue> getSendNotificationMethod() {
+    io.grpc.MethodDescriptor<com.example.demo.serviceImpl.notificationService.NotificationService.Notification, com.google.protobuf.BoolValue> getSendNotificationMethod;
     if ((getSendNotificationMethod = NotificationManagerGrpc.getSendNotificationMethod) == null) {
       synchronized (NotificationManagerGrpc.class) {
         if ((getSendNotificationMethod = NotificationManagerGrpc.getSendNotificationMethod) == null) {
           NotificationManagerGrpc.getSendNotificationMethod = getSendNotificationMethod = 
-              io.grpc.MethodDescriptor.<com.example.demo.serviceImpl.notificationService.NotificationService.Notification, com.google.protobuf.Int32Value>newBuilder()
+              io.grpc.MethodDescriptor.<com.example.demo.serviceImpl.notificationService.NotificationService.Notification, com.google.protobuf.BoolValue>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.BIDI_STREAMING)
               .setFullMethodName(generateFullMethodName(
-                  "com.example.demo.service.notificationService.NotificationManager", "sendNotification"))
+                  "com.example.demo.serviceImpl.notificationService.NotificationManager", "sendNotification"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.example.demo.serviceImpl.notificationService.NotificationService.Notification.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.google.protobuf.Int32Value.getDefaultInstance()))
+                  com.google.protobuf.BoolValue.getDefaultInstance()))
                   .setSchemaDescriptor(new NotificationManagerMethodDescriptorSupplier("sendNotification"))
                   .build();
           }
@@ -56,35 +60,67 @@ public final class NotificationManagerGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<com.google.protobuf.Int32Value,
-      com.google.protobuf.Int32Value> getTestMethod;
+      com.google.protobuf.Int32Value> getTurnOnNotificationsMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "test",
+      fullMethodName = SERVICE_NAME + '/' + "turnOnNotifications",
       requestType = com.google.protobuf.Int32Value.class,
       responseType = com.google.protobuf.Int32Value.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<com.google.protobuf.Int32Value,
-      com.google.protobuf.Int32Value> getTestMethod() {
-    io.grpc.MethodDescriptor<com.google.protobuf.Int32Value, com.google.protobuf.Int32Value> getTestMethod;
-    if ((getTestMethod = NotificationManagerGrpc.getTestMethod) == null) {
+      com.google.protobuf.Int32Value> getTurnOnNotificationsMethod() {
+    io.grpc.MethodDescriptor<com.google.protobuf.Int32Value, com.google.protobuf.Int32Value> getTurnOnNotificationsMethod;
+    if ((getTurnOnNotificationsMethod = NotificationManagerGrpc.getTurnOnNotificationsMethod) == null) {
       synchronized (NotificationManagerGrpc.class) {
-        if ((getTestMethod = NotificationManagerGrpc.getTestMethod) == null) {
-          NotificationManagerGrpc.getTestMethod = getTestMethod = 
+        if ((getTurnOnNotificationsMethod = NotificationManagerGrpc.getTurnOnNotificationsMethod) == null) {
+          NotificationManagerGrpc.getTurnOnNotificationsMethod = getTurnOnNotificationsMethod = 
               io.grpc.MethodDescriptor.<com.google.protobuf.Int32Value, com.google.protobuf.Int32Value>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(
-                  "com.example.demo.service.notificationService.NotificationManager", "test"))
+                  "com.example.demo.serviceImpl.notificationService.NotificationManager", "turnOnNotifications"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.google.protobuf.Int32Value.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.google.protobuf.Int32Value.getDefaultInstance()))
-                  .setSchemaDescriptor(new NotificationManagerMethodDescriptorSupplier("test"))
+                  .setSchemaDescriptor(new NotificationManagerMethodDescriptorSupplier("turnOnNotifications"))
                   .build();
           }
         }
      }
-     return getTestMethod;
+     return getTurnOnNotificationsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.google.protobuf.Int32Value,
+      com.google.protobuf.Int32Value> getTurnOffNotificationsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "turnOffNotifications",
+      requestType = com.google.protobuf.Int32Value.class,
+      responseType = com.google.protobuf.Int32Value.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.google.protobuf.Int32Value,
+      com.google.protobuf.Int32Value> getTurnOffNotificationsMethod() {
+    io.grpc.MethodDescriptor<com.google.protobuf.Int32Value, com.google.protobuf.Int32Value> getTurnOffNotificationsMethod;
+    if ((getTurnOffNotificationsMethod = NotificationManagerGrpc.getTurnOffNotificationsMethod) == null) {
+      synchronized (NotificationManagerGrpc.class) {
+        if ((getTurnOffNotificationsMethod = NotificationManagerGrpc.getTurnOffNotificationsMethod) == null) {
+          NotificationManagerGrpc.getTurnOffNotificationsMethod = getTurnOffNotificationsMethod = 
+              io.grpc.MethodDescriptor.<com.google.protobuf.Int32Value, com.google.protobuf.Int32Value>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(
+                  "com.example.demo.serviceImpl.notificationService.NotificationManager", "turnOffNotifications"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.protobuf.Int32Value.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.protobuf.Int32Value.getDefaultInstance()))
+                  .setSchemaDescriptor(new NotificationManagerMethodDescriptorSupplier("turnOffNotifications"))
+                  .build();
+          }
+        }
+     }
+     return getTurnOffNotificationsMethod;
   }
 
   /**
@@ -117,15 +153,22 @@ public final class NotificationManagerGrpc {
     /**
      */
     public io.grpc.stub.StreamObserver<com.example.demo.serviceImpl.notificationService.NotificationService.Notification> sendNotification(
-        io.grpc.stub.StreamObserver<com.google.protobuf.Int32Value> responseObserver) {
+        io.grpc.stub.StreamObserver<com.google.protobuf.BoolValue> responseObserver) {
       return asyncUnimplementedStreamingCall(getSendNotificationMethod(), responseObserver);
     }
 
     /**
      */
-    public void test(com.google.protobuf.Int32Value request,
+    public void turnOnNotifications(com.google.protobuf.Int32Value request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Int32Value> responseObserver) {
-      asyncUnimplementedUnaryCall(getTestMethod(), responseObserver);
+      asyncUnimplementedUnaryCall(getTurnOnNotificationsMethod(), responseObserver);
+    }
+
+    /**
+     */
+    public void turnOffNotifications(com.google.protobuf.Int32Value request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Int32Value> responseObserver) {
+      asyncUnimplementedUnaryCall(getTurnOffNotificationsMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
@@ -135,15 +178,22 @@ public final class NotificationManagerGrpc {
             asyncBidiStreamingCall(
               new MethodHandlers<
                 com.example.demo.serviceImpl.notificationService.NotificationService.Notification,
-                com.google.protobuf.Int32Value>(
+                com.google.protobuf.BoolValue>(
                   this, METHODID_SEND_NOTIFICATION)))
           .addMethod(
-            getTestMethod(),
+            getTurnOnNotificationsMethod(),
             asyncUnaryCall(
               new MethodHandlers<
                 com.google.protobuf.Int32Value,
                 com.google.protobuf.Int32Value>(
-                  this, METHODID_TEST)))
+                  this, METHODID_TURN_ON_NOTIFICATIONS)))
+          .addMethod(
+            getTurnOffNotificationsMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                com.google.protobuf.Int32Value,
+                com.google.protobuf.Int32Value>(
+                  this, METHODID_TURN_OFF_NOTIFICATIONS)))
           .build();
     }
   }
@@ -169,17 +219,25 @@ public final class NotificationManagerGrpc {
     /**
      */
     public io.grpc.stub.StreamObserver<com.example.demo.serviceImpl.notificationService.NotificationService.Notification> sendNotification(
-        io.grpc.stub.StreamObserver<com.google.protobuf.Int32Value> responseObserver) {
+        io.grpc.stub.StreamObserver<com.google.protobuf.BoolValue> responseObserver) {
       return asyncBidiStreamingCall(
           getChannel().newCall(getSendNotificationMethod(), getCallOptions()), responseObserver);
     }
 
     /**
      */
-    public void test(com.google.protobuf.Int32Value request,
+    public void turnOnNotifications(com.google.protobuf.Int32Value request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Int32Value> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getTestMethod(), getCallOptions()), request, responseObserver);
+          getChannel().newCall(getTurnOnNotificationsMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void turnOffNotifications(com.google.protobuf.Int32Value request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Int32Value> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getTurnOffNotificationsMethod(), getCallOptions()), request, responseObserver);
     }
   }
 
@@ -203,9 +261,16 @@ public final class NotificationManagerGrpc {
 
     /**
      */
-    public com.google.protobuf.Int32Value test(com.google.protobuf.Int32Value request) {
+    public com.google.protobuf.Int32Value turnOnNotifications(com.google.protobuf.Int32Value request) {
       return blockingUnaryCall(
-          getChannel(), getTestMethod(), getCallOptions(), request);
+          getChannel(), getTurnOnNotificationsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.google.protobuf.Int32Value turnOffNotifications(com.google.protobuf.Int32Value request) {
+      return blockingUnaryCall(
+          getChannel(), getTurnOffNotificationsMethod(), getCallOptions(), request);
     }
   }
 
@@ -229,15 +294,24 @@ public final class NotificationManagerGrpc {
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Int32Value> test(
+    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Int32Value> turnOnNotifications(
         com.google.protobuf.Int32Value request) {
       return futureUnaryCall(
-          getChannel().newCall(getTestMethod(), getCallOptions()), request);
+          getChannel().newCall(getTurnOnNotificationsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Int32Value> turnOffNotifications(
+        com.google.protobuf.Int32Value request) {
+      return futureUnaryCall(
+          getChannel().newCall(getTurnOffNotificationsMethod(), getCallOptions()), request);
     }
   }
 
-  private static final int METHODID_TEST = 0;
-  private static final int METHODID_SEND_NOTIFICATION = 1;
+  private static final int METHODID_TURN_ON_NOTIFICATIONS = 0;
+  private static final int METHODID_TURN_OFF_NOTIFICATIONS = 1;
+  private static final int METHODID_SEND_NOTIFICATION = 2;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -256,8 +330,12 @@ public final class NotificationManagerGrpc {
     @java.lang.SuppressWarnings("unchecked")
     public void invoke(Req request, io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
-        case METHODID_TEST:
-          serviceImpl.test((com.google.protobuf.Int32Value) request,
+        case METHODID_TURN_ON_NOTIFICATIONS:
+          serviceImpl.turnOnNotifications((com.google.protobuf.Int32Value) request,
+              (io.grpc.stub.StreamObserver<com.google.protobuf.Int32Value>) responseObserver);
+          break;
+        case METHODID_TURN_OFF_NOTIFICATIONS:
+          serviceImpl.turnOffNotifications((com.google.protobuf.Int32Value) request,
               (io.grpc.stub.StreamObserver<com.google.protobuf.Int32Value>) responseObserver);
           break;
         default:
@@ -272,7 +350,7 @@ public final class NotificationManagerGrpc {
       switch (methodId) {
         case METHODID_SEND_NOTIFICATION:
           return (io.grpc.stub.StreamObserver<Req>) serviceImpl.sendNotification(
-              (io.grpc.stub.StreamObserver<com.google.protobuf.Int32Value>) responseObserver);
+              (io.grpc.stub.StreamObserver<com.google.protobuf.BoolValue>) responseObserver);
         default:
           throw new AssertionError();
       }
@@ -325,7 +403,8 @@ public final class NotificationManagerGrpc {
           serviceDescriptor = result = io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
               .setSchemaDescriptor(new NotificationManagerFileDescriptorSupplier())
               .addMethod(getSendNotificationMethod())
-              .addMethod(getTestMethod())
+              .addMethod(getTurnOnNotificationsMethod())
+              .addMethod(getTurnOffNotificationsMethod())
               .build();
         }
       }

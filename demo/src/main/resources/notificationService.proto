@@ -5,8 +5,9 @@ import "google/protobuf/wrappers.proto";
 package com.example.demo.serviceImpl.notificationService;
 
 service NotificationManager {
-    rpc sendNotification(stream Notification) returns (stream google.protobuf.Int32Value);
-    rpc test(google.protobuf.Int32Value) returns (google.protobuf.Int32Value);
+    rpc sendNotification(stream Notification) returns (stream google.protobuf.BoolValue);
+    rpc turnOnNotifications(google.protobuf.Int32Value) returns (google.protobuf.Int32Value);
+    rpc turnOffNotifications(google.protobuf.Int32Value) returns (google.protobuf.Int32Value);
 }
 
 message Notification {

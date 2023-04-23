@@ -12,17 +12,19 @@
 </head>
 <body>
 <div class="container">
-    <h2 class="my-3">User Manager</h2>
+    <h2 class="my-3">Automated Scheduling App</h2>
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="http://localhost:8080/">Home</a></li>
+            <li class="breadcrumb-item"><a href="#">User manager</a></li>
+        </ol>
+    </nav>
     <div class="row">
         <div class="col">
             <ul class="list-group">
-                <li class="list-group-item"><a href="http://localhost:8080/user-manager/create-form">Add new user
-                    (Method
-                    1. Unary
-                    call)</a></li>
-                <li class="list-group-item"><a href="http://localhost:8080/user-manager/users">Get all users (Method 2.
-                    Server
-                    stream call)</a></li>
+                <li class="list-group-item"><a href="http://localhost:8080/user-manager/create-form">Add new user (Unary call)</a></li>
+                <li class="list-group-item"><a href="http://localhost:8080/user-manager/update-form">Update user (Unary call)</a></li>
+                <li class="list-group-item"><a href="http://localhost:8080/user-manager/users">Get all users (Server stream call)</a></li>
             </ul>
         </div>
     </div>

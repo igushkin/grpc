@@ -1,14 +1,16 @@
-package com.example.demo.serviceUse;
+package com.example.demo.serviceClient;
 
 import com.example.demo.serviceServer.NotificationServer;
 import com.example.demo.serviceImpl.notificationService.NotificationManagerGrpc;
 import com.example.demo.serviceImpl.notificationService.NotificationService;
-import com.example.demo.serviceUse.serviceDiscovery.ServiceDiscovery;
+import com.example.demo.serviceClient.serviceDiscovery.ServiceDiscovery;
+import com.google.protobuf.BoolValue;
 import com.google.protobuf.Int32Value;
 import io.grpc.ManagedChannel;
 import io.grpc.stub.StreamObserver;
 
 import javax.jmdns.ServiceInfo;
+import java.util.ArrayList;
 import java.util.List;
 
 public class NotificationManager extends gRPCService {
@@ -22,17 +24,30 @@ public class NotificationManager extends gRPCService {
         }
     }
 
-
-    public static List<Integer> notifyUsers(List<NotificationService.Notification> notifications) throws InterruptedException {
-
+    public static int turnOnNotifications(int userID) {
         ManagedChannel channel = getChannel(serviceInfo);
+        NotificationManagerGrpc.NotificationManagerBlockingStub blockingStub = NotificationManagerGrpc.newBlockingStub(channel);
+        blockingStub.turnOnNotifications(Int32Value.newBuilder().setValue(userID).build());
+        return userID;
+    }
 
+    public static int turnOffNotifications(int userID) {
+        ManagedChannel channel = getChannel(serviceInfo);
+        NotificationManagerGrpc.NotificationManagerBlockingStub blockingStub = NotificationManagerGrpc.newBlockingStub(channel);
+        blockingStub.turnOffNotifications(Int32Value.newBuilder().setValue(userID).build());
+        return userID;
+    }
+
+    public static List<Boolean> notifyUsers(List<NotificationService.Notification> notifications) throws InterruptedException {
+
+        List<Boolean> response = new ArrayList<>();
+        ManagedChannel channel = getChannel(serviceInfo);
         NotificationManagerGrpc.NotificationManagerStub stub = NotificationManagerGrpc.newStub(channel);
 
-        StreamObserver<Int32Value> responseObserver = new StreamObserver<>() {
+        StreamObserver<BoolValue> responseObserver = new StreamObserver<>() {
             @Override
-            public void onNext(Int32Value value) {
-                System.out.println("Value : " + value);
+            public void onNext(BoolValue value) {
+                response.add(value.getValue());
             }
 
             @Override
@@ -56,6 +71,7 @@ public class NotificationManager extends gRPCService {
 
         Thread.sleep(100);
 
-        return List.of();
+        return response;
     }
+
 }

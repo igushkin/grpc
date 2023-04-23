@@ -15,7 +15,7 @@ public final class NotificationService {
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
   public interface NotificationOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:com.example.demo.service.notificationService.Notification)
+      // @@protoc_insertion_point(interface_extends:com.example.demo.serviceImpl.notificationService.Notification)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -59,11 +59,11 @@ public final class NotificationService {
         getMsgBytes();
   }
   /**
-   * Protobuf type {@code com.example.demo.service.notificationService.Notification}
+   * Protobuf type {@code com.example.demo.serviceImpl.notificationService.Notification}
    */
   public  static final class Notification extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:com.example.demo.service.notificationService.Notification)
+      // @@protoc_insertion_point(message_implements:com.example.demo.serviceImpl.notificationService.Notification)
       NotificationOrBuilder {
   private static final long serialVersionUID = 0L;
     // Use Notification.newBuilder() to construct.
@@ -151,13 +151,13 @@ public final class NotificationService {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.example.demo.serviceImpl.notificationService.NotificationService.internal_static_com_example_demo_service_notificationService_Notification_descriptor;
+      return com.example.demo.serviceImpl.notificationService.NotificationService.internal_static_com_example_demo_serviceImpl_notificationService_Notification_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.example.demo.serviceImpl.notificationService.NotificationService.internal_static_com_example_demo_service_notificationService_Notification_fieldAccessorTable
+      return com.example.demo.serviceImpl.notificationService.NotificationService.internal_static_com_example_demo_serviceImpl_notificationService_Notification_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.example.demo.serviceImpl.notificationService.NotificationService.Notification.class, com.example.demo.serviceImpl.notificationService.NotificationService.Notification.Builder.class);
     }
@@ -480,26 +480,26 @@ public final class NotificationService {
       return builder;
     }
     /**
-     * Protobuf type {@code com.example.demo.service.notificationService.Notification}
+     * Protobuf type {@code com.example.demo.serviceImpl.notificationService.Notification}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:com.example.demo.service.notificationService.Notification)
+        // @@protoc_insertion_point(builder_implements:com.example.demo.serviceImpl.notificationService.Notification)
         com.example.demo.serviceImpl.notificationService.NotificationService.NotificationOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.example.demo.serviceImpl.notificationService.NotificationService.internal_static_com_example_demo_service_notificationService_Notification_descriptor;
+        return com.example.demo.serviceImpl.notificationService.NotificationService.internal_static_com_example_demo_serviceImpl_notificationService_Notification_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.example.demo.serviceImpl.notificationService.NotificationService.internal_static_com_example_demo_service_notificationService_Notification_fieldAccessorTable
+        return com.example.demo.serviceImpl.notificationService.NotificationService.internal_static_com_example_demo_serviceImpl_notificationService_Notification_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
                 com.example.demo.serviceImpl.notificationService.NotificationService.Notification.class, com.example.demo.serviceImpl.notificationService.NotificationService.Notification.Builder.class);
       }
 
-      // Construct using com.example.demo.service.notificationService.NotificationService.Notification.newBuilder()
+      // Construct using com.example.demo.serviceImpl.notificationService.NotificationService.Notification.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -533,7 +533,7 @@ public final class NotificationService {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.example.demo.serviceImpl.notificationService.NotificationService.internal_static_com_example_demo_service_notificationService_Notification_descriptor;
+        return com.example.demo.serviceImpl.notificationService.NotificationService.internal_static_com_example_demo_serviceImpl_notificationService_Notification_descriptor;
       }
 
       @java.lang.Override
@@ -924,10 +924,10 @@ public final class NotificationService {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:com.example.demo.service.notificationService.Notification)
+      // @@protoc_insertion_point(builder_scope:com.example.demo.serviceImpl.notificationService.Notification)
     }
 
-    // @@protoc_insertion_point(class_scope:com.example.demo.service.notificationService.Notification)
+    // @@protoc_insertion_point(class_scope:com.example.demo.serviceImpl.notificationService.Notification)
     private static final com.example.demo.serviceImpl.notificationService.NotificationService.Notification DEFAULT_INSTANCE;
     static {
       DEFAULT_INSTANCE = new com.example.demo.serviceImpl.notificationService.NotificationService.Notification();
@@ -965,10 +965,10 @@ public final class NotificationService {
   }
 
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_example_demo_service_notificationService_Notification_descriptor;
+    internal_static_com_example_demo_serviceImpl_notificationService_Notification_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_com_example_demo_service_notificationService_Notification_fieldAccessorTable;
+      internal_static_com_example_demo_serviceImpl_notificationService_Notification_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -978,17 +978,19 @@ public final class NotificationService {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\031notificationService.proto\022,com.example" +
-      ".demo.service.notificationService\032\036googl" +
-      "e/protobuf/wrappers.proto\"[\n\014Notificatio" +
-      "n\022\n\n\002id\030\001 \001(\005\022\016\n\006userID\030\002 \001(\005\022\021\n\tuserEma" +
-      "il\030\003 \001(\t\022\017\n\007subject\030\004 \001(\t\022\013\n\003msg\030\005 \001(\t2\310" +
-      "\001\n\023NotificationManager\022o\n\020sendNotificati" +
-      "on\022:.com.example.demo.service.notificati" +
-      "onService.Notification\032\033.google.protobuf" +
-      ".Int32Value(\0010\001\022@\n\004test\022\033.google.protobu" +
-      "f.Int32Value\032\033.google.protobuf.Int32Valu" +
-      "eb\006proto3"
+      "\n\031notificationService.proto\0220com.example" +
+      ".demo.serviceImpl.notificationService\032\036g" +
+      "oogle/protobuf/wrappers.proto\"[\n\014Notific" +
+      "ation\022\n\n\002id\030\001 \001(\005\022\016\n\006userID\030\002 \001(\005\022\021\n\tuse" +
+      "rEmail\030\003 \001(\t\022\017\n\007subject\030\004 \001(\t\022\013\n\003msg\030\005 \001" +
+      "(\t2\254\002\n\023NotificationManager\022r\n\020sendNotifi" +
+      "cation\022>.com.example.demo.serviceImpl.no" +
+      "tificationService.Notification\032\032.google." +
+      "protobuf.BoolValue(\0010\001\022O\n\023turnOnNotifica" +
+      "tions\022\033.google.protobuf.Int32Value\032\033.goo" +
+      "gle.protobuf.Int32Value\022P\n\024turnOffNotifi" +
+      "cations\022\033.google.protobuf.Int32Value\032\033.g" +
+      "oogle.protobuf.Int32Valueb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -1003,11 +1005,11 @@ public final class NotificationService {
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           com.google.protobuf.WrappersProto.getDescriptor(),
         }, assigner);
-    internal_static_com_example_demo_service_notificationService_Notification_descriptor =
+    internal_static_com_example_demo_serviceImpl_notificationService_Notification_descriptor =
       getDescriptor().getMessageTypes().get(0);
-    internal_static_com_example_demo_service_notificationService_Notification_fieldAccessorTable = new
+    internal_static_com_example_demo_serviceImpl_notificationService_Notification_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_com_example_demo_service_notificationService_Notification_descriptor,
+        internal_static_com_example_demo_serviceImpl_notificationService_Notification_descriptor,
         new java.lang.String[] { "Id", "UserID", "UserEmail", "Subject", "Msg", });
     com.google.protobuf.WrappersProto.getDescriptor();
   }

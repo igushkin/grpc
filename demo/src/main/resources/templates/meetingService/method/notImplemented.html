@@ -12,43 +12,57 @@
 </head>
 <body>
 <div class="container">
-    <h2 class="my-3">Meeting Manager</h2>
-    <h3 class="my-3">Build report</h3>
-    <div class="row">
-        <table class="table">
-            <thead>
-            <tr>
-                <th scope="col" class="col-7">Parameter</th>
-                <th scope="col" class="col-5">Result</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <td>Total registered meetings in the system</td>
-                <td><span th:text="${numOfMeetings}"></span></td>
-            </tr>
-            <tr>
-                <td>Percentage of meetings by day of the week</td>
-                <td>
-                    <canvas id="weekChart"></canvas>
-                </td>
-            </tr>
-            <tr>
-                <td>Percentage of meetings by user</td>
-                <td>
-                    <canvas id="userChart"></canvas>
-                </td>
-            </tr>
-            </tbody>
-        </table>
-    </div>
-</div>
-
-<div id="names">
-    <th:block th:each="name: ${statByUser.keySet()}">
-        <span th:value="${name}"></span>
+    <h2 class="my-3">Automated Scheduling App</h2>
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="http://localhost:8080/">Home</a></li>
+            <li class="breadcrumb-item"><a href="http://localhost:8080/meeting-manager">Meeting manager</a></li>
+            <li class="breadcrumb-item"><a href="#">Report</a></li>
+        </ol>
+    </nav>
+    <th:block th:if="${statByUser != null}">
+        <div class="row">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th scope="col" class="col-7">Parameter</th>
+                    <th scope="col" class="col-5">Result</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>Total registered meetings in the system</td>
+                    <td><span th:text="${numOfMeetings}"></span></td>
+                </tr>
+                <tr>
+                    <td><b>Statistics of meetings by day of the week</b></br>
+                        The graph shows on which day of the week the most meetings are held, which can help users of the program in time planning.
+                    </td>
+                    <td>
+                        <canvas id="weekChart"></canvas>
+                    </td>
+                </tr>
+                <tr>
+                    <td><b>Meeting statistics by user</b></br>
+                        The data is presented in percentages of meetings held with each of the users you have selected.
+                    </td>
+                    <td>
+                        <canvas id="userChart"></canvas>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
     </th:block>
 </div>
+
+<th:block th:if="${statByUser != null}">
+    <div id="names">
+        <th:block th:each="name: ${statByUser.keySet()}">
+            <span th:value="${name}"></span>
+        </th:block>
+    </div>
+</th:block>
 
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->

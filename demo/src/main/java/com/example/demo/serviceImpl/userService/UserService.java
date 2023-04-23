@@ -15,7 +15,7 @@ public final class UserService {
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
   public interface UserOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:com.example.demo.service.userService.User)
+      // @@protoc_insertion_point(interface_extends:com.example.demo.serviceImpl.userService.User)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -64,11 +64,11 @@ public final class UserService {
         getDeviceIDBytes();
   }
   /**
-   * Protobuf type {@code com.example.demo.service.userService.User}
+   * Protobuf type {@code com.example.demo.serviceImpl.userService.User}
    */
   public  static final class User extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:com.example.demo.service.userService.User)
+      // @@protoc_insertion_point(message_implements:com.example.demo.serviceImpl.userService.User)
       UserOrBuilder {
   private static final long serialVersionUID = 0L;
     // Use User.newBuilder() to construct.
@@ -157,13 +157,13 @@ public final class UserService {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.example.demo.serviceImpl.userService.UserService.internal_static_com_example_demo_service_userService_User_descriptor;
+      return com.example.demo.serviceImpl.userService.UserService.internal_static_com_example_demo_serviceImpl_userService_User_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.example.demo.serviceImpl.userService.UserService.internal_static_com_example_demo_service_userService_User_fieldAccessorTable
+      return com.example.demo.serviceImpl.userService.UserService.internal_static_com_example_demo_serviceImpl_userService_User_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.example.demo.serviceImpl.userService.UserService.User.class, com.example.demo.serviceImpl.userService.UserService.User.Builder.class);
     }
@@ -510,26 +510,26 @@ public final class UserService {
       return builder;
     }
     /**
-     * Protobuf type {@code com.example.demo.service.userService.User}
+     * Protobuf type {@code com.example.demo.serviceImpl.userService.User}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:com.example.demo.service.userService.User)
+        // @@protoc_insertion_point(builder_implements:com.example.demo.serviceImpl.userService.User)
         com.example.demo.serviceImpl.userService.UserService.UserOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.example.demo.serviceImpl.userService.UserService.internal_static_com_example_demo_service_userService_User_descriptor;
+        return com.example.demo.serviceImpl.userService.UserService.internal_static_com_example_demo_serviceImpl_userService_User_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.example.demo.serviceImpl.userService.UserService.internal_static_com_example_demo_service_userService_User_fieldAccessorTable
+        return com.example.demo.serviceImpl.userService.UserService.internal_static_com_example_demo_serviceImpl_userService_User_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
                 com.example.demo.serviceImpl.userService.UserService.User.class, com.example.demo.serviceImpl.userService.UserService.User.Builder.class);
       }
 
-      // Construct using com.example.demo.service.userService.UserService.User.newBuilder()
+      // Construct using com.example.demo.serviceImpl.userService.UserService.User.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -563,7 +563,7 @@ public final class UserService {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.example.demo.serviceImpl.userService.UserService.internal_static_com_example_demo_service_userService_User_descriptor;
+        return com.example.demo.serviceImpl.userService.UserService.internal_static_com_example_demo_serviceImpl_userService_User_descriptor;
       }
 
       @java.lang.Override
@@ -998,10 +998,10 @@ public final class UserService {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:com.example.demo.service.userService.User)
+      // @@protoc_insertion_point(builder_scope:com.example.demo.serviceImpl.userService.User)
     }
 
-    // @@protoc_insertion_point(class_scope:com.example.demo.service.userService.User)
+    // @@protoc_insertion_point(class_scope:com.example.demo.serviceImpl.userService.User)
     private static final com.example.demo.serviceImpl.userService.UserService.User DEFAULT_INSTANCE;
     static {
       DEFAULT_INSTANCE = new com.example.demo.serviceImpl.userService.UserService.User();
@@ -1039,10 +1039,10 @@ public final class UserService {
   }
 
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_example_demo_service_userService_User_descriptor;
+    internal_static_com_example_demo_serviceImpl_userService_User_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_com_example_demo_service_userService_User_fieldAccessorTable;
+      internal_static_com_example_demo_serviceImpl_userService_User_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -1052,16 +1052,19 @@ public final class UserService {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\021userService.proto\022$com.example.demo.se" +
-      "rvice.userService\032\036google/protobuf/wrapp" +
-      "ers.proto\"V\n\004User\022\n\n\002id\030\001 \001(\005\022\014\n\004name\030\002 " +
-      "\001(\t\022\r\n\005email\030\003 \001(\t\022\023\n\013phoneNumber\030\004 \001(\t\022" +
-      "\020\n\010deviceID\030\005 \001(\t2\271\001\n\013UserManager\022R\n\007add" +
-      "User\022*.com.example.demo.service.userServ" +
-      "ice.User\032\033.google.protobuf.Int32Value\022V\n" +
-      "\010findUser\022\034.google.protobuf.StringValue\032" +
-      "*.com.example.demo.service.userService.U" +
-      "ser0\001b\006proto3"
+      "\n\021userService.proto\022(com.example.demo.se" +
+      "rviceImpl.userService\032\036google/protobuf/w" +
+      "rappers.proto\032\033google/protobuf/empty.pro" +
+      "to\"V\n\004User\022\n\n\002id\030\001 \001(\005\022\014\n\004name\030\002 \001(\t\022\r\n\005" +
+      "email\030\003 \001(\t\022\023\n\013phoneNumber\030\004 \001(\t\022\020\n\010devi" +
+      "ceID\030\005 \001(\t2\231\002\n\013UserManager\022V\n\007addUser\022.." +
+      "com.example.demo.serviceImpl.userService" +
+      ".User\032\033.google.protobuf.Int32Value\022Y\n\nup" +
+      "dateUser\022..com.example.demo.serviceImpl." +
+      "userService.User\032\033.google.protobuf.Int32" +
+      "Value\022W\n\013getAllUsers\022\026.google.protobuf.E" +
+      "mpty\032..com.example.demo.serviceImpl.user" +
+      "Service.User0\001b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -1075,14 +1078,16 @@ public final class UserService {
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           com.google.protobuf.WrappersProto.getDescriptor(),
+          com.google.protobuf.EmptyProto.getDescriptor(),
         }, assigner);
-    internal_static_com_example_demo_service_userService_User_descriptor =
+    internal_static_com_example_demo_serviceImpl_userService_User_descriptor =
       getDescriptor().getMessageTypes().get(0);
-    internal_static_com_example_demo_service_userService_User_fieldAccessorTable = new
+    internal_static_com_example_demo_serviceImpl_userService_User_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_com_example_demo_service_userService_User_descriptor,
+        internal_static_com_example_demo_serviceImpl_userService_User_descriptor,
         new java.lang.String[] { "Id", "Name", "Email", "PhoneNumber", "DeviceID", });
     com.google.protobuf.WrappersProto.getDescriptor();
+    com.google.protobuf.EmptyProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

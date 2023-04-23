@@ -1,9 +1,11 @@
 package com.example.demo.serviceServer;
 
+import com.example.demo.interceptor.MyServerInterceptor;
 import com.example.demo.serviceServer.jmDNS.MyJmDNS;
 import io.grpc.BindableService;
 import io.grpc.Server;
 import io.grpc.ServerBuilder;
+import io.grpc.ServerInterceptors;
 
 import java.io.IOException;
 
@@ -15,7 +17,7 @@ public abstract class MyServer {
     protected void startAndRegister(BindableService bindableService, String serviceType, String serviceName, String serviceDescription, int port) throws IOException, InterruptedException {
         /* The port on which the server should run */
         server = ServerBuilder.forPort(port)
-                .addService(bindableService)
+                .addService(ServerInterceptors.intercept(bindableService, new MyServerInterceptor()))
                 .build()
                 .start();
 

@@ -1,5 +1,6 @@
-package com.example.demo.serviceUse;
+package com.example.demo.serviceClient;
 
+import com.example.demo.interceptor.MyClientInterceptor;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
 
@@ -12,6 +13,7 @@ public abstract class gRPCService {
 
         ManagedChannel channel = ManagedChannelBuilder
                 .forAddress(host, port)
+                .intercept(new MyClientInterceptor())
                 .usePlaintext()
                 .build();
 

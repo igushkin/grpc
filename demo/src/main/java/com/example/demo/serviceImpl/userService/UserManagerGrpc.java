@@ -1,13 +1,18 @@
 package com.example.demo.serviceImpl.userService;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
+import static io.grpc.stub.ClientCalls.asyncBidiStreamingCall;
+import static io.grpc.stub.ClientCalls.asyncClientStreamingCall;
 import static io.grpc.stub.ClientCalls.asyncServerStreamingCall;
 import static io.grpc.stub.ClientCalls.asyncUnaryCall;
 import static io.grpc.stub.ClientCalls.blockingServerStreamingCall;
 import static io.grpc.stub.ClientCalls.blockingUnaryCall;
 import static io.grpc.stub.ClientCalls.futureUnaryCall;
+import static io.grpc.stub.ServerCalls.asyncBidiStreamingCall;
+import static io.grpc.stub.ServerCalls.asyncClientStreamingCall;
 import static io.grpc.stub.ServerCalls.asyncServerStreamingCall;
 import static io.grpc.stub.ServerCalls.asyncUnaryCall;
+import static io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall;
 import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
@@ -19,7 +24,7 @@ public final class UserManagerGrpc {
 
   private UserManagerGrpc() {}
 
-  public static final String SERVICE_NAME = "com.example.demo.service.userService.UserManager";
+  public static final String SERVICE_NAME = "com.example.demo.serviceImpl.userService.UserManager";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<com.example.demo.serviceImpl.userService.UserService.User,
@@ -40,7 +45,7 @@ public final class UserManagerGrpc {
               io.grpc.MethodDescriptor.<com.example.demo.serviceImpl.userService.UserService.User, com.google.protobuf.Int32Value>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(
-                  "com.example.demo.service.userService.UserManager", "addUser"))
+                  "com.example.demo.serviceImpl.userService.UserManager", "addUser"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.example.demo.serviceImpl.userService.UserService.User.getDefaultInstance()))
@@ -54,36 +59,68 @@ public final class UserManagerGrpc {
      return getAddUserMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<com.google.protobuf.StringValue,
-      com.example.demo.serviceImpl.userService.UserService.User> getFindUserMethod;
+  private static volatile io.grpc.MethodDescriptor<com.example.demo.serviceImpl.userService.UserService.User,
+      com.google.protobuf.Int32Value> getUpdateUserMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "findUser",
-      requestType = com.google.protobuf.StringValue.class,
-      responseType = com.example.demo.serviceImpl.userService.UserService.User.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
-  public static io.grpc.MethodDescriptor<com.google.protobuf.StringValue,
-      com.example.demo.serviceImpl.userService.UserService.User> getFindUserMethod() {
-    io.grpc.MethodDescriptor<com.google.protobuf.StringValue, com.example.demo.serviceImpl.userService.UserService.User> getFindUserMethod;
-    if ((getFindUserMethod = UserManagerGrpc.getFindUserMethod) == null) {
+      fullMethodName = SERVICE_NAME + '/' + "updateUser",
+      requestType = com.example.demo.serviceImpl.userService.UserService.User.class,
+      responseType = com.google.protobuf.Int32Value.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.example.demo.serviceImpl.userService.UserService.User,
+      com.google.protobuf.Int32Value> getUpdateUserMethod() {
+    io.grpc.MethodDescriptor<com.example.demo.serviceImpl.userService.UserService.User, com.google.protobuf.Int32Value> getUpdateUserMethod;
+    if ((getUpdateUserMethod = UserManagerGrpc.getUpdateUserMethod) == null) {
       synchronized (UserManagerGrpc.class) {
-        if ((getFindUserMethod = UserManagerGrpc.getFindUserMethod) == null) {
-          UserManagerGrpc.getFindUserMethod = getFindUserMethod = 
-              io.grpc.MethodDescriptor.<com.google.protobuf.StringValue, com.example.demo.serviceImpl.userService.UserService.User>newBuilder()
-              .setType(io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
+        if ((getUpdateUserMethod = UserManagerGrpc.getUpdateUserMethod) == null) {
+          UserManagerGrpc.getUpdateUserMethod = getUpdateUserMethod = 
+              io.grpc.MethodDescriptor.<com.example.demo.serviceImpl.userService.UserService.User, com.google.protobuf.Int32Value>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(
-                  "com.example.demo.service.userService.UserManager", "findUser"))
+                  "com.example.demo.serviceImpl.userService.UserManager", "updateUser"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.google.protobuf.StringValue.getDefaultInstance()))
-              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.example.demo.serviceImpl.userService.UserService.User.getDefaultInstance()))
-                  .setSchemaDescriptor(new UserManagerMethodDescriptorSupplier("findUser"))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.protobuf.Int32Value.getDefaultInstance()))
+                  .setSchemaDescriptor(new UserManagerMethodDescriptorSupplier("updateUser"))
                   .build();
           }
         }
      }
-     return getFindUserMethod;
+     return getUpdateUserMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.google.protobuf.Empty,
+      com.example.demo.serviceImpl.userService.UserService.User> getGetAllUsersMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "getAllUsers",
+      requestType = com.google.protobuf.Empty.class,
+      responseType = com.example.demo.serviceImpl.userService.UserService.User.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
+  public static io.grpc.MethodDescriptor<com.google.protobuf.Empty,
+      com.example.demo.serviceImpl.userService.UserService.User> getGetAllUsersMethod() {
+    io.grpc.MethodDescriptor<com.google.protobuf.Empty, com.example.demo.serviceImpl.userService.UserService.User> getGetAllUsersMethod;
+    if ((getGetAllUsersMethod = UserManagerGrpc.getGetAllUsersMethod) == null) {
+      synchronized (UserManagerGrpc.class) {
+        if ((getGetAllUsersMethod = UserManagerGrpc.getGetAllUsersMethod) == null) {
+          UserManagerGrpc.getGetAllUsersMethod = getGetAllUsersMethod = 
+              io.grpc.MethodDescriptor.<com.google.protobuf.Empty, com.example.demo.serviceImpl.userService.UserService.User>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
+              .setFullMethodName(generateFullMethodName(
+                  "com.example.demo.serviceImpl.userService.UserManager", "getAllUsers"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.protobuf.Empty.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.example.demo.serviceImpl.userService.UserService.User.getDefaultInstance()))
+                  .setSchemaDescriptor(new UserManagerMethodDescriptorSupplier("getAllUsers"))
+                  .build();
+          }
+        }
+     }
+     return getGetAllUsersMethod;
   }
 
   /**
@@ -122,9 +159,16 @@ public final class UserManagerGrpc {
 
     /**
      */
-    public void findUser(com.google.protobuf.StringValue request,
+    public void updateUser(com.example.demo.serviceImpl.userService.UserService.User request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Int32Value> responseObserver) {
+      asyncUnimplementedUnaryCall(getUpdateUserMethod(), responseObserver);
+    }
+
+    /**
+     */
+    public void getAllUsers(com.google.protobuf.Empty request,
         io.grpc.stub.StreamObserver<com.example.demo.serviceImpl.userService.UserService.User> responseObserver) {
-      asyncUnimplementedUnaryCall(getFindUserMethod(), responseObserver);
+      asyncUnimplementedUnaryCall(getGetAllUsersMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
@@ -137,12 +181,19 @@ public final class UserManagerGrpc {
                 com.google.protobuf.Int32Value>(
                   this, METHODID_ADD_USER)))
           .addMethod(
-            getFindUserMethod(),
+            getUpdateUserMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                com.example.demo.serviceImpl.userService.UserService.User,
+                com.google.protobuf.Int32Value>(
+                  this, METHODID_UPDATE_USER)))
+          .addMethod(
+            getGetAllUsersMethod(),
             asyncServerStreamingCall(
               new MethodHandlers<
-                com.google.protobuf.StringValue,
+                com.google.protobuf.Empty,
                 com.example.demo.serviceImpl.userService.UserService.User>(
-                  this, METHODID_FIND_USER)))
+                  this, METHODID_GET_ALL_USERS)))
           .build();
     }
   }
@@ -175,10 +226,18 @@ public final class UserManagerGrpc {
 
     /**
      */
-    public void findUser(com.google.protobuf.StringValue request,
+    public void updateUser(com.example.demo.serviceImpl.userService.UserService.User request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Int32Value> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getUpdateUserMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void getAllUsers(com.google.protobuf.Empty request,
         io.grpc.stub.StreamObserver<com.example.demo.serviceImpl.userService.UserService.User> responseObserver) {
       asyncServerStreamingCall(
-          getChannel().newCall(getFindUserMethod(), getCallOptions()), request, responseObserver);
+          getChannel().newCall(getGetAllUsersMethod(), getCallOptions()), request, responseObserver);
     }
   }
 
@@ -209,10 +268,17 @@ public final class UserManagerGrpc {
 
     /**
      */
-    public java.util.Iterator<com.example.demo.serviceImpl.userService.UserService.User> findUser(
-        com.google.protobuf.StringValue request) {
+    public com.google.protobuf.Int32Value updateUser(com.example.demo.serviceImpl.userService.UserService.User request) {
+      return blockingUnaryCall(
+          getChannel(), getUpdateUserMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public java.util.Iterator<com.example.demo.serviceImpl.userService.UserService.User> getAllUsers(
+        com.google.protobuf.Empty request) {
       return blockingServerStreamingCall(
-          getChannel(), getFindUserMethod(), getCallOptions(), request);
+          getChannel(), getGetAllUsersMethod(), getCallOptions(), request);
     }
   }
 
@@ -241,10 +307,19 @@ public final class UserManagerGrpc {
       return futureUnaryCall(
           getChannel().newCall(getAddUserMethod(), getCallOptions()), request);
     }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Int32Value> updateUser(
+        com.example.demo.serviceImpl.userService.UserService.User request) {
+      return futureUnaryCall(
+          getChannel().newCall(getUpdateUserMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_ADD_USER = 0;
-  private static final int METHODID_FIND_USER = 1;
+  private static final int METHODID_UPDATE_USER = 1;
+  private static final int METHODID_GET_ALL_USERS = 2;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -267,8 +342,12 @@ public final class UserManagerGrpc {
           serviceImpl.addUser((com.example.demo.serviceImpl.userService.UserService.User) request,
               (io.grpc.stub.StreamObserver<com.google.protobuf.Int32Value>) responseObserver);
           break;
-        case METHODID_FIND_USER:
-          serviceImpl.findUser((com.google.protobuf.StringValue) request,
+        case METHODID_UPDATE_USER:
+          serviceImpl.updateUser((com.example.demo.serviceImpl.userService.UserService.User) request,
+              (io.grpc.stub.StreamObserver<com.google.protobuf.Int32Value>) responseObserver);
+          break;
+        case METHODID_GET_ALL_USERS:
+          serviceImpl.getAllUsers((com.google.protobuf.Empty) request,
               (io.grpc.stub.StreamObserver<com.example.demo.serviceImpl.userService.UserService.User>) responseObserver);
           break;
         default:
@@ -333,7 +412,8 @@ public final class UserManagerGrpc {
           serviceDescriptor = result = io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
               .setSchemaDescriptor(new UserManagerFileDescriptorSupplier())
               .addMethod(getAddUserMethod())
-              .addMethod(getFindUserMethod())
+              .addMethod(getUpdateUserMethod())
+              .addMethod(getGetAllUsersMethod())
               .build();
         }
       }

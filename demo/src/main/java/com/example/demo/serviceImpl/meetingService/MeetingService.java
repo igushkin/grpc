@@ -15,7 +15,7 @@ public final class MeetingService {
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
   public interface MeetingOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:com.example.demo.service.meetingService.Meeting)
+      // @@protoc_insertion_point(interface_extends:com.example.demo.serviceImpl.meetingService.Meeting)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -52,11 +52,11 @@ public final class MeetingService {
     com.google.protobuf.TimestampOrBuilder getTimeOrBuilder();
   }
   /**
-   * Protobuf type {@code com.example.demo.service.meetingService.Meeting}
+   * Protobuf type {@code com.example.demo.serviceImpl.meetingService.Meeting}
    */
   public  static final class Meeting extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:com.example.demo.service.meetingService.Meeting)
+      // @@protoc_insertion_point(message_implements:com.example.demo.serviceImpl.meetingService.Meeting)
       MeetingOrBuilder {
   private static final long serialVersionUID = 0L;
     // Use Meeting.newBuilder() to construct.
@@ -143,13 +143,13 @@ public final class MeetingService {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.example.demo.serviceImpl.meetingService.MeetingService.internal_static_com_example_demo_service_meetingService_Meeting_descriptor;
+      return com.example.demo.serviceImpl.meetingService.MeetingService.internal_static_com_example_demo_serviceImpl_meetingService_Meeting_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.example.demo.serviceImpl.meetingService.MeetingService.internal_static_com_example_demo_service_meetingService_Meeting_fieldAccessorTable
+      return com.example.demo.serviceImpl.meetingService.MeetingService.internal_static_com_example_demo_serviceImpl_meetingService_Meeting_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.example.demo.serviceImpl.meetingService.MeetingService.Meeting.class, com.example.demo.serviceImpl.meetingService.MeetingService.Meeting.Builder.class);
     }
@@ -421,26 +421,26 @@ public final class MeetingService {
       return builder;
     }
     /**
-     * Protobuf type {@code com.example.demo.service.meetingService.Meeting}
+     * Protobuf type {@code com.example.demo.serviceImpl.meetingService.Meeting}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:com.example.demo.service.meetingService.Meeting)
+        // @@protoc_insertion_point(builder_implements:com.example.demo.serviceImpl.meetingService.Meeting)
         com.example.demo.serviceImpl.meetingService.MeetingService.MeetingOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.example.demo.serviceImpl.meetingService.MeetingService.internal_static_com_example_demo_service_meetingService_Meeting_descriptor;
+        return com.example.demo.serviceImpl.meetingService.MeetingService.internal_static_com_example_demo_serviceImpl_meetingService_Meeting_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.example.demo.serviceImpl.meetingService.MeetingService.internal_static_com_example_demo_service_meetingService_Meeting_fieldAccessorTable
+        return com.example.demo.serviceImpl.meetingService.MeetingService.internal_static_com_example_demo_serviceImpl_meetingService_Meeting_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
                 com.example.demo.serviceImpl.meetingService.MeetingService.Meeting.class, com.example.demo.serviceImpl.meetingService.MeetingService.Meeting.Builder.class);
       }
 
-      // Construct using com.example.demo.service.meetingService.MeetingService.Meeting.newBuilder()
+      // Construct using com.example.demo.serviceImpl.meetingService.MeetingService.Meeting.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -476,7 +476,7 @@ public final class MeetingService {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.example.demo.serviceImpl.meetingService.MeetingService.internal_static_com_example_demo_service_meetingService_Meeting_descriptor;
+        return com.example.demo.serviceImpl.meetingService.MeetingService.internal_static_com_example_demo_serviceImpl_meetingService_Meeting_descriptor;
       }
 
       @java.lang.Override
@@ -844,10 +844,10 @@ public final class MeetingService {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:com.example.demo.service.meetingService.Meeting)
+      // @@protoc_insertion_point(builder_scope:com.example.demo.serviceImpl.meetingService.Meeting)
     }
 
-    // @@protoc_insertion_point(class_scope:com.example.demo.service.meetingService.Meeting)
+    // @@protoc_insertion_point(class_scope:com.example.demo.serviceImpl.meetingService.Meeting)
     private static final com.example.demo.serviceImpl.meetingService.MeetingService.Meeting DEFAULT_INSTANCE;
     static {
       DEFAULT_INSTANCE = new com.example.demo.serviceImpl.meetingService.MeetingService.Meeting();
@@ -885,7 +885,7 @@ public final class MeetingService {
   }
 
   public interface ReportOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:com.example.demo.service.meetingService.Report)
+      // @@protoc_insertion_point(interface_extends:com.example.demo.serviceImpl.meetingService.Report)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -962,11 +962,11 @@ public final class MeetingService {
         int key);
   }
   /**
-   * Protobuf type {@code com.example.demo.service.meetingService.Report}
+   * Protobuf type {@code com.example.demo.serviceImpl.meetingService.Report}
    */
   public  static final class Report extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:com.example.demo.service.meetingService.Report)
+      // @@protoc_insertion_point(message_implements:com.example.demo.serviceImpl.meetingService.Report)
       ReportOrBuilder {
   private static final long serialVersionUID = 0L;
     // Use Report.newBuilder() to construct.
@@ -1053,7 +1053,7 @@ public final class MeetingService {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.example.demo.serviceImpl.meetingService.MeetingService.internal_static_com_example_demo_service_meetingService_Report_descriptor;
+      return com.example.demo.serviceImpl.meetingService.MeetingService.internal_static_com_example_demo_serviceImpl_meetingService_Report_descriptor;
     }
 
     @SuppressWarnings({"rawtypes"})
@@ -1073,7 +1073,7 @@ public final class MeetingService {
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.example.demo.serviceImpl.meetingService.MeetingService.internal_static_com_example_demo_service_meetingService_Report_fieldAccessorTable
+      return com.example.demo.serviceImpl.meetingService.MeetingService.internal_static_com_example_demo_serviceImpl_meetingService_Report_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.example.demo.serviceImpl.meetingService.MeetingService.Report.class, com.example.demo.serviceImpl.meetingService.MeetingService.Report.Builder.class);
     }
@@ -1094,7 +1094,7 @@ public final class MeetingService {
           java.lang.Integer, java.lang.Double> defaultEntry =
               com.google.protobuf.MapEntry
               .<java.lang.Integer, java.lang.Double>newDefaultInstance(
-                  com.example.demo.serviceImpl.meetingService.MeetingService.internal_static_com_example_demo_service_meetingService_Report_StatByDayOfTheWeekEntry_descriptor,
+                  com.example.demo.serviceImpl.meetingService.MeetingService.internal_static_com_example_demo_serviceImpl_meetingService_Report_StatByDayOfTheWeekEntry_descriptor, 
                   com.google.protobuf.WireFormat.FieldType.INT32,
                   0,
                   com.google.protobuf.WireFormat.FieldType.DOUBLE,
@@ -1170,7 +1170,7 @@ public final class MeetingService {
           java.lang.Integer, java.lang.Double> defaultEntry =
               com.google.protobuf.MapEntry
               .<java.lang.Integer, java.lang.Double>newDefaultInstance(
-                  com.example.demo.serviceImpl.meetingService.MeetingService.internal_static_com_example_demo_service_meetingService_Report_StatByUserEntry_descriptor,
+                  com.example.demo.serviceImpl.meetingService.MeetingService.internal_static_com_example_demo_serviceImpl_meetingService_Report_StatByUserEntry_descriptor, 
                   com.google.protobuf.WireFormat.FieldType.INT32,
                   0,
                   com.google.protobuf.WireFormat.FieldType.DOUBLE,
@@ -1441,15 +1441,15 @@ public final class MeetingService {
       return builder;
     }
     /**
-     * Protobuf type {@code com.example.demo.service.meetingService.Report}
+     * Protobuf type {@code com.example.demo.serviceImpl.meetingService.Report}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:com.example.demo.service.meetingService.Report)
+        // @@protoc_insertion_point(builder_implements:com.example.demo.serviceImpl.meetingService.Report)
         com.example.demo.serviceImpl.meetingService.MeetingService.ReportOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.example.demo.serviceImpl.meetingService.MeetingService.internal_static_com_example_demo_service_meetingService_Report_descriptor;
+        return com.example.demo.serviceImpl.meetingService.MeetingService.internal_static_com_example_demo_serviceImpl_meetingService_Report_descriptor;
       }
 
       @SuppressWarnings({"rawtypes"})
@@ -1481,12 +1481,12 @@ public final class MeetingService {
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.example.demo.serviceImpl.meetingService.MeetingService.internal_static_com_example_demo_service_meetingService_Report_fieldAccessorTable
+        return com.example.demo.serviceImpl.meetingService.MeetingService.internal_static_com_example_demo_serviceImpl_meetingService_Report_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
                 com.example.demo.serviceImpl.meetingService.MeetingService.Report.class, com.example.demo.serviceImpl.meetingService.MeetingService.Report.Builder.class);
       }
 
-      // Construct using com.example.demo.service.meetingService.MeetingService.Report.newBuilder()
+      // Construct using com.example.demo.serviceImpl.meetingService.MeetingService.Report.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -1514,7 +1514,7 @@ public final class MeetingService {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.example.demo.serviceImpl.meetingService.MeetingService.internal_static_com_example_demo_service_meetingService_Report_descriptor;
+        return com.example.demo.serviceImpl.meetingService.MeetingService.internal_static_com_example_demo_serviceImpl_meetingService_Report_descriptor;
       }
 
       @java.lang.Override
@@ -1911,10 +1911,10 @@ public final class MeetingService {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:com.example.demo.service.meetingService.Report)
+      // @@protoc_insertion_point(builder_scope:com.example.demo.serviceImpl.meetingService.Report)
     }
 
-    // @@protoc_insertion_point(class_scope:com.example.demo.service.meetingService.Report)
+    // @@protoc_insertion_point(class_scope:com.example.demo.serviceImpl.meetingService.Report)
     private static final com.example.demo.serviceImpl.meetingService.MeetingService.Report DEFAULT_INSTANCE;
     static {
       DEFAULT_INSTANCE = new com.example.demo.serviceImpl.meetingService.MeetingService.Report();
@@ -1952,25 +1952,25 @@ public final class MeetingService {
   }
 
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_example_demo_service_meetingService_Meeting_descriptor;
+    internal_static_com_example_demo_serviceImpl_meetingService_Meeting_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_com_example_demo_service_meetingService_Meeting_fieldAccessorTable;
+      internal_static_com_example_demo_serviceImpl_meetingService_Meeting_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_example_demo_service_meetingService_Report_descriptor;
+    internal_static_com_example_demo_serviceImpl_meetingService_Report_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_com_example_demo_service_meetingService_Report_fieldAccessorTable;
+      internal_static_com_example_demo_serviceImpl_meetingService_Report_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_example_demo_service_meetingService_Report_StatByDayOfTheWeekEntry_descriptor;
+    internal_static_com_example_demo_serviceImpl_meetingService_Report_StatByDayOfTheWeekEntry_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_com_example_demo_service_meetingService_Report_StatByDayOfTheWeekEntry_fieldAccessorTable;
+      internal_static_com_example_demo_serviceImpl_meetingService_Report_StatByDayOfTheWeekEntry_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_example_demo_service_meetingService_Report_StatByUserEntry_descriptor;
+    internal_static_com_example_demo_serviceImpl_meetingService_Report_StatByUserEntry_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_com_example_demo_service_meetingService_Report_StatByUserEntry_fieldAccessorTable;
+      internal_static_com_example_demo_serviceImpl_meetingService_Report_StatByUserEntry_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -1980,28 +1980,29 @@ public final class MeetingService {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\024meetingService.proto\022\'com.example.demo" +
-      ".service.meetingService\032\036google/protobuf" +
-      "/wrappers.proto\032\037google/protobuf/timesta" +
-      "mp.proto\"a\n\007Meeting\022\n\n\002id\030\001 \001(\005\022\016\n\006userI" +
-      "d\030\002 \001(\005\022\020\n\010userName\030\003 \001(\t\022(\n\004time\030\004 \001(\0132" +
-      "\032.google.protobuf.Timestamp\"\307\002\n\006Report\022\025" +
-      "\n\rnumOfMeetings\030\001 \001(\005\022c\n\022statByDayOfTheW" +
-      "eek\030\002 \003(\0132G.com.example.demo.service.mee" +
-      "tingService.Report.StatByDayOfTheWeekEnt" +
-      "ry\022S\n\nstatByUser\030\003 \003(\0132?.com.example.dem" +
-      "o.service.meetingService.Report.StatByUs" +
-      "erEntry\0329\n\027StatByDayOfTheWeekEntry\022\013\n\003ke" +
-      "y\030\001 \001(\005\022\r\n\005value\030\002 \001(\001:\0028\001\0321\n\017StatByUser" +
-      "Entry\022\013\n\003key\030\001 \001(\005\022\r\n\005value\030\002 \001(\001:\0028\0012\257\002" +
-      "\n\016MeetingManager\022\\\n\013bookMeeting\0220.com.ex" +
-      "ample.demo.service.meetingService.Meetin" +
-      "g\032\033.google.protobuf.Int32Value\022b\n\017getUse" +
-      "rMeetings\022\033.google.protobuf.Int32Value\0320" +
-      ".com.example.demo.service.meetingService" +
-      ".Meeting0\001\022[\n\tgetReport\022\033.google.protobu" +
-      "f.Int32Value\032/.com.example.demo.service." +
-      "meetingService.Report(\001b\006proto3"
+      "\n\024meetingService.proto\022+com.example.demo" +
+      ".serviceImpl.meetingService\032\036google/prot" +
+      "obuf/wrappers.proto\032\037google/protobuf/tim" +
+      "estamp.proto\"a\n\007Meeting\022\n\n\002id\030\001 \001(\005\022\016\n\006u" +
+      "serId\030\002 \001(\005\022\020\n\010userName\030\003 \001(\t\022(\n\004time\030\004 " +
+      "\001(\0132\032.google.protobuf.Timestamp\"\317\002\n\006Repo" +
+      "rt\022\025\n\rnumOfMeetings\030\001 \001(\005\022g\n\022statByDayOf" +
+      "TheWeek\030\002 \003(\0132K.com.example.demo.service" +
+      "Impl.meetingService.Report.StatByDayOfTh" +
+      "eWeekEntry\022W\n\nstatByUser\030\003 \003(\0132C.com.exa" +
+      "mple.demo.serviceImpl.meetingService.Rep" +
+      "ort.StatByUserEntry\0329\n\027StatByDayOfTheWee" +
+      "kEntry\022\013\n\003key\030\001 \001(\005\022\r\n\005value\030\002 \001(\001:\0028\001\0321" +
+      "\n\017StatByUserEntry\022\013\n\003key\030\001 \001(\005\022\r\n\005value\030" +
+      "\002 \001(\001:\0028\0012\272\002\n\016MeetingManager\022_\n\naddMeeti" +
+      "ng\0224.com.example.demo.serviceImpl.meetin" +
+      "gService.Meeting\032\033.google.protobuf.Int32" +
+      "Value\022f\n\017getUserMeetings\022\033.google.protob" +
+      "uf.Int32Value\0324.com.example.demo.service" +
+      "Impl.meetingService.Meeting0\001\022_\n\tgetRepo" +
+      "rt\022\033.google.protobuf.Int32Value\0323.com.ex" +
+      "ample.demo.serviceImpl.meetingService.Re" +
+      "port(\001b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -2017,29 +2018,29 @@ public final class MeetingService {
           com.google.protobuf.WrappersProto.getDescriptor(),
           com.google.protobuf.TimestampProto.getDescriptor(),
         }, assigner);
-    internal_static_com_example_demo_service_meetingService_Meeting_descriptor =
+    internal_static_com_example_demo_serviceImpl_meetingService_Meeting_descriptor =
       getDescriptor().getMessageTypes().get(0);
-    internal_static_com_example_demo_service_meetingService_Meeting_fieldAccessorTable = new
+    internal_static_com_example_demo_serviceImpl_meetingService_Meeting_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_com_example_demo_service_meetingService_Meeting_descriptor,
+        internal_static_com_example_demo_serviceImpl_meetingService_Meeting_descriptor,
         new java.lang.String[] { "Id", "UserId", "UserName", "Time", });
-    internal_static_com_example_demo_service_meetingService_Report_descriptor =
+    internal_static_com_example_demo_serviceImpl_meetingService_Report_descriptor =
       getDescriptor().getMessageTypes().get(1);
-    internal_static_com_example_demo_service_meetingService_Report_fieldAccessorTable = new
+    internal_static_com_example_demo_serviceImpl_meetingService_Report_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_com_example_demo_service_meetingService_Report_descriptor,
+        internal_static_com_example_demo_serviceImpl_meetingService_Report_descriptor,
         new java.lang.String[] { "NumOfMeetings", "StatByDayOfTheWeek", "StatByUser", });
-    internal_static_com_example_demo_service_meetingService_Report_StatByDayOfTheWeekEntry_descriptor =
-      internal_static_com_example_demo_service_meetingService_Report_descriptor.getNestedTypes().get(0);
-    internal_static_com_example_demo_service_meetingService_Report_StatByDayOfTheWeekEntry_fieldAccessorTable = new
+    internal_static_com_example_demo_serviceImpl_meetingService_Report_StatByDayOfTheWeekEntry_descriptor =
+      internal_static_com_example_demo_serviceImpl_meetingService_Report_descriptor.getNestedTypes().get(0);
+    internal_static_com_example_demo_serviceImpl_meetingService_Report_StatByDayOfTheWeekEntry_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_com_example_demo_service_meetingService_Report_StatByDayOfTheWeekEntry_descriptor,
+        internal_static_com_example_demo_serviceImpl_meetingService_Report_StatByDayOfTheWeekEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
-    internal_static_com_example_demo_service_meetingService_Report_StatByUserEntry_descriptor =
-      internal_static_com_example_demo_service_meetingService_Report_descriptor.getNestedTypes().get(1);
-    internal_static_com_example_demo_service_meetingService_Report_StatByUserEntry_fieldAccessorTable = new
+    internal_static_com_example_demo_serviceImpl_meetingService_Report_StatByUserEntry_descriptor =
+      internal_static_com_example_demo_serviceImpl_meetingService_Report_descriptor.getNestedTypes().get(1);
+    internal_static_com_example_demo_serviceImpl_meetingService_Report_StatByUserEntry_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_com_example_demo_service_meetingService_Report_StatByUserEntry_descriptor,
+        internal_static_com_example_demo_serviceImpl_meetingService_Report_StatByUserEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     com.google.protobuf.WrappersProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();

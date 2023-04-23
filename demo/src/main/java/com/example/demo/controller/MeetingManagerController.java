@@ -1,7 +1,7 @@
 package com.example.demo.controller;
 
-import com.example.demo.serviceUse.MeetingManager;
-import com.example.demo.serviceUse.UserManager;
+import com.example.demo.serviceClient.MeetingManager;
+import com.example.demo.serviceClient.UserManager;
 import com.example.demo.serviceImpl.meetingService.*;
 import com.example.demo.serviceImpl.userService.*;
 import com.google.protobuf.*;
@@ -95,12 +95,22 @@ public class MeetingManagerController {
     }
 
     @GetMapping("/report")
-    public ModelAndView getReport() throws InterruptedException {
+    public ModelAndView getReport(@RequestParam(required = false) List<Integer> userIDs) throws InterruptedException {
         List<UserService.User> users = UserManager.getAllUsers();
-        MeetingService.Report report = MeetingManager.getReport(List.of(1, 2, 3));
+        ModelAndView modelAndView = new ModelAndView("meetingService/method/selectUser.html");
+        modelAndView.addObject("users", users);
+        return modelAndView;
+    }
 
+    @GetMapping("/report/chart")
+    public ModelAndView buildReport(@RequestParam List<Integer> userIDs) throws InterruptedException {
 
+        List<UserService.User> users = UserManager.getAllUsers();
         ModelAndView modelAndView = new ModelAndView("meetingService/method/notImplemented.html");
+        modelAndView.addObject("users", users);
+
+        MeetingService.Report report = MeetingManager.getReport(userIDs);
+
         modelAndView.addObject("numOfMeetings", report.getNumOfMeetings());
 
         Map<String, Double> statByUser = report

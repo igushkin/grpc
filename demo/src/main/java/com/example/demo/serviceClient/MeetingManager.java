@@ -1,10 +1,10 @@
-package com.example.demo.serviceUse;
+package com.example.demo.serviceClient;
 
 import com.example.demo.serviceServer.MeetingServiceServer;
 import com.example.demo.serviceImpl.meetingService.MeetingManagerGrpc;
 import com.example.demo.serviceImpl.meetingService.MeetingService;
 import com.example.demo.serviceImpl.userService.UserService;
-import com.example.demo.serviceUse.serviceDiscovery.ServiceDiscovery;
+import com.example.demo.serviceClient.serviceDiscovery.ServiceDiscovery;
 import com.google.protobuf.Int32Value;
 import io.grpc.ManagedChannel;
 import io.grpc.stub.StreamObserver;
@@ -33,7 +33,7 @@ public class MeetingManager extends gRPCService {
     public static int addMeeting(MeetingService.Meeting meeting) {
         ManagedChannel channel = getChannel(serviceInfo);
         MeetingManagerGrpc.MeetingManagerBlockingStub blockingStub = MeetingManagerGrpc.newBlockingStub(channel);
-        return blockingStub.bookMeeting(meeting).getValue();
+        return blockingStub.addMeeting(meeting).getValue();
     }
 
     public static List<MeetingService.Meeting> getUserMeetings(int userID) {

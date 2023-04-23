@@ -1,8 +1,11 @@
 package com.example.demo.serviceImpl.userService;
 
+import com.google.protobuf.Empty;
 import com.google.protobuf.Int32Value;
 import com.google.protobuf.StringValue;
+import io.grpc.Status;
 import io.grpc.stub.StreamObserver;
+import org.springframework.boot.autoconfigure.cassandra.CassandraProperties;
 
 import java.io.*;
 import java.util.HashMap;
@@ -33,7 +36,25 @@ public class UserManagerImpl extends UserManagerGrpc.UserManagerImplBase {
                 responseObserver.onCompleted();
 
             } else {
-                throw new IllegalArgumentException();
+                responseObserver.onError(Status.INVALID_ARGUMENT.withDescription(String.format("A user with id:'%' already exists", request.getId())).asException());
+            }
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    @Override
+    public void updateUser(UserService.User request, StreamObserver<Int32Value> responseObserver) {
+        try {
+            if (!userStorage.containsKey(request.getId())) {
+                userStorage.put(request.getId(), request);
+                saveToFile();
+                Int32Value id = Int32Value.newBuilder().setValue(request.getId()).build();
+                responseObserver.onNext(id);
+                responseObserver.onCompleted();
+
+            } else {
+                responseObserver.onError(Status.INVALID_ARGUMENT.withDescription(String.format("No user with id:'%' in the system", request.getId())).asException());
             }
         } catch (Exception e) {
 
@@ -41,15 +62,10 @@ public class UserManagerImpl extends UserManagerGrpc.UserManagerImplBase {
     }
 
     @Override
-    public void findUser(StringValue request, StreamObserver<UserService.User> responseObserver) {
+    public void getAllUsers(Empty request, StreamObserver<UserService.User> responseObserver) {
         for (UserService.User user : userStorage.values()) {
-            String userName = user.getName().toLowerCase();
-            //if (userName.startsWith(request.getValue().toLowerCase())) {
             responseObserver.onNext(user);
-            //}
         }
-        //UserService.User user = UserService.User.newBuilder().setId(1).build();
-        //responseObserver.onNext(user);
         responseObserver.onCompleted();
     }
 

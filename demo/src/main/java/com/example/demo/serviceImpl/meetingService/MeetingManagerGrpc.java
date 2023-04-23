@@ -1,12 +1,14 @@
 package com.example.demo.serviceImpl.meetingService;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
+import static io.grpc.stub.ClientCalls.asyncBidiStreamingCall;
 import static io.grpc.stub.ClientCalls.asyncClientStreamingCall;
 import static io.grpc.stub.ClientCalls.asyncServerStreamingCall;
 import static io.grpc.stub.ClientCalls.asyncUnaryCall;
 import static io.grpc.stub.ClientCalls.blockingServerStreamingCall;
 import static io.grpc.stub.ClientCalls.blockingUnaryCall;
 import static io.grpc.stub.ClientCalls.futureUnaryCall;
+import static io.grpc.stub.ServerCalls.asyncBidiStreamingCall;
 import static io.grpc.stub.ServerCalls.asyncClientStreamingCall;
 import static io.grpc.stub.ServerCalls.asyncServerStreamingCall;
 import static io.grpc.stub.ServerCalls.asyncUnaryCall;
@@ -22,39 +24,39 @@ public final class MeetingManagerGrpc {
 
   private MeetingManagerGrpc() {}
 
-  public static final String SERVICE_NAME = "com.example.demo.service.meetingService.MeetingManager";
+  public static final String SERVICE_NAME = "com.example.demo.serviceImpl.meetingService.MeetingManager";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<com.example.demo.serviceImpl.meetingService.MeetingService.Meeting,
-      com.google.protobuf.Int32Value> getBookMeetingMethod;
+      com.google.protobuf.Int32Value> getAddMeetingMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "bookMeeting",
+      fullMethodName = SERVICE_NAME + '/' + "addMeeting",
       requestType = com.example.demo.serviceImpl.meetingService.MeetingService.Meeting.class,
       responseType = com.google.protobuf.Int32Value.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<com.example.demo.serviceImpl.meetingService.MeetingService.Meeting,
-      com.google.protobuf.Int32Value> getBookMeetingMethod() {
-    io.grpc.MethodDescriptor<com.example.demo.serviceImpl.meetingService.MeetingService.Meeting, com.google.protobuf.Int32Value> getBookMeetingMethod;
-    if ((getBookMeetingMethod = MeetingManagerGrpc.getBookMeetingMethod) == null) {
+      com.google.protobuf.Int32Value> getAddMeetingMethod() {
+    io.grpc.MethodDescriptor<com.example.demo.serviceImpl.meetingService.MeetingService.Meeting, com.google.protobuf.Int32Value> getAddMeetingMethod;
+    if ((getAddMeetingMethod = MeetingManagerGrpc.getAddMeetingMethod) == null) {
       synchronized (MeetingManagerGrpc.class) {
-        if ((getBookMeetingMethod = MeetingManagerGrpc.getBookMeetingMethod) == null) {
-          MeetingManagerGrpc.getBookMeetingMethod = getBookMeetingMethod = 
+        if ((getAddMeetingMethod = MeetingManagerGrpc.getAddMeetingMethod) == null) {
+          MeetingManagerGrpc.getAddMeetingMethod = getAddMeetingMethod = 
               io.grpc.MethodDescriptor.<com.example.demo.serviceImpl.meetingService.MeetingService.Meeting, com.google.protobuf.Int32Value>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(
-                  "com.example.demo.service.meetingService.MeetingManager", "bookMeeting"))
+                  "com.example.demo.serviceImpl.meetingService.MeetingManager", "addMeeting"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.example.demo.serviceImpl.meetingService.MeetingService.Meeting.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.google.protobuf.Int32Value.getDefaultInstance()))
-                  .setSchemaDescriptor(new MeetingManagerMethodDescriptorSupplier("bookMeeting"))
+                  .setSchemaDescriptor(new MeetingManagerMethodDescriptorSupplier("addMeeting"))
                   .build();
           }
         }
      }
-     return getBookMeetingMethod;
+     return getAddMeetingMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<com.google.protobuf.Int32Value,
@@ -75,7 +77,7 @@ public final class MeetingManagerGrpc {
               io.grpc.MethodDescriptor.<com.google.protobuf.Int32Value, com.example.demo.serviceImpl.meetingService.MeetingService.Meeting>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
               .setFullMethodName(generateFullMethodName(
-                  "com.example.demo.service.meetingService.MeetingManager", "getUserMeetings"))
+                  "com.example.demo.serviceImpl.meetingService.MeetingManager", "getUserMeetings"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.google.protobuf.Int32Value.getDefaultInstance()))
@@ -107,7 +109,7 @@ public final class MeetingManagerGrpc {
               io.grpc.MethodDescriptor.<com.google.protobuf.Int32Value, com.example.demo.serviceImpl.meetingService.MeetingService.Report>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.CLIENT_STREAMING)
               .setFullMethodName(generateFullMethodName(
-                  "com.example.demo.service.meetingService.MeetingManager", "getReport"))
+                  "com.example.demo.serviceImpl.meetingService.MeetingManager", "getReport"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.google.protobuf.Int32Value.getDefaultInstance()))
@@ -150,9 +152,9 @@ public final class MeetingManagerGrpc {
 
     /**
      */
-    public void bookMeeting(com.example.demo.serviceImpl.meetingService.MeetingService.Meeting request,
+    public void addMeeting(com.example.demo.serviceImpl.meetingService.MeetingService.Meeting request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Int32Value> responseObserver) {
-      asyncUnimplementedUnaryCall(getBookMeetingMethod(), responseObserver);
+      asyncUnimplementedUnaryCall(getAddMeetingMethod(), responseObserver);
     }
 
     /**
@@ -172,12 +174,12 @@ public final class MeetingManagerGrpc {
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
-            getBookMeetingMethod(),
+            getAddMeetingMethod(),
             asyncUnaryCall(
               new MethodHandlers<
                 com.example.demo.serviceImpl.meetingService.MeetingService.Meeting,
                 com.google.protobuf.Int32Value>(
-                  this, METHODID_BOOK_MEETING)))
+                  this, METHODID_ADD_MEETING)))
           .addMethod(
             getGetUserMeetingsMethod(),
             asyncServerStreamingCall(
@@ -216,10 +218,10 @@ public final class MeetingManagerGrpc {
 
     /**
      */
-    public void bookMeeting(com.example.demo.serviceImpl.meetingService.MeetingService.Meeting request,
+    public void addMeeting(com.example.demo.serviceImpl.meetingService.MeetingService.Meeting request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Int32Value> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getBookMeetingMethod(), getCallOptions()), request, responseObserver);
+          getChannel().newCall(getAddMeetingMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -259,9 +261,9 @@ public final class MeetingManagerGrpc {
 
     /**
      */
-    public com.google.protobuf.Int32Value bookMeeting(com.example.demo.serviceImpl.meetingService.MeetingService.Meeting request) {
+    public com.google.protobuf.Int32Value addMeeting(com.example.demo.serviceImpl.meetingService.MeetingService.Meeting request) {
       return blockingUnaryCall(
-          getChannel(), getBookMeetingMethod(), getCallOptions(), request);
+          getChannel(), getAddMeetingMethod(), getCallOptions(), request);
     }
 
     /**
@@ -293,14 +295,14 @@ public final class MeetingManagerGrpc {
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Int32Value> bookMeeting(
+    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Int32Value> addMeeting(
         com.example.demo.serviceImpl.meetingService.MeetingService.Meeting request) {
       return futureUnaryCall(
-          getChannel().newCall(getBookMeetingMethod(), getCallOptions()), request);
+          getChannel().newCall(getAddMeetingMethod(), getCallOptions()), request);
     }
   }
 
-  private static final int METHODID_BOOK_MEETING = 0;
+  private static final int METHODID_ADD_MEETING = 0;
   private static final int METHODID_GET_USER_MEETINGS = 1;
   private static final int METHODID_GET_REPORT = 2;
 
@@ -321,8 +323,8 @@ public final class MeetingManagerGrpc {
     @java.lang.SuppressWarnings("unchecked")
     public void invoke(Req request, io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
-        case METHODID_BOOK_MEETING:
-          serviceImpl.bookMeeting((com.example.demo.serviceImpl.meetingService.MeetingService.Meeting) request,
+        case METHODID_ADD_MEETING:
+          serviceImpl.addMeeting((com.example.demo.serviceImpl.meetingService.MeetingService.Meeting) request,
               (io.grpc.stub.StreamObserver<com.google.protobuf.Int32Value>) responseObserver);
           break;
         case METHODID_GET_USER_MEETINGS:
@@ -393,7 +395,7 @@ public final class MeetingManagerGrpc {
         if (result == null) {
           serviceDescriptor = result = io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
               .setSchemaDescriptor(new MeetingManagerFileDescriptorSupplier())
-              .addMethod(getBookMeetingMethod())
+              .addMethod(getAddMeetingMethod())
               .addMethod(getGetUserMeetingsMethod())
               .addMethod(getGetReportMethod())
               .build();

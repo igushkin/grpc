@@ -14,15 +14,22 @@
 </head>
 <body>
 <div class="container">
-    <h2 class="my-3">Meeting Manager</h2>
-    <h3 class="my-4">Sending email notifications</h3>
+    <h2 class="my-3">Automated Scheduling App</h2>
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="http://localhost:8080/">Home</a></li>
+            <li class="breadcrumb-item"><a href="http://localhost:8080/notification-manager">Notification manager</a></li>
+            <li class="breadcrumb-item"><a href="#">Email notification</a></li>
+        </ol>
+    </nav>
+    <p>Send notifications. Notifications will be sent to all selected users by email.</p>
     <div class="row">
         <div class="col">
 
             <form action="http://localhost:8080/notification-manager/notify" method="post">
 
                 <div class="mb-2 mt-2">
-                    <label for="userEmails">Select the recipient:</label>
+                    <label for="userEmails">Select the recipients:</label>
                     <select class="form-control" name="userEmails" id="userEmails" multiple>
                         <option value=""></option>
                         <th:block th:each="user: ${users}">
