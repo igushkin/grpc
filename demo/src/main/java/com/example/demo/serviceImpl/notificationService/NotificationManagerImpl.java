@@ -1,6 +1,5 @@
 package com.example.demo.serviceImpl.notificationService;
 
-import com.example.demo.serviceImpl.meetingService.MeetingService;
 import com.google.protobuf.BoolValue;
 import com.google.protobuf.Int32Value;
 import io.grpc.Status;
@@ -13,7 +12,6 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
-import java.util.Dictionary;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Properties;
@@ -133,13 +131,13 @@ public class NotificationManagerImpl extends NotificationManagerGrpc.Notificatio
         }
     }
 
-    private void restoreData() throws IOException {
+    private void restoreData() {
         try (FileInputStream input = new FileInputStream(notificationStatusFileStorage)) {
             ObjectMapper mapper = new ObjectMapper();
             byte[] bytes = input.readAllBytes();
             String data = new String(bytes, StandardCharsets.UTF_8);
             this.notificationStatus = mapper.readValue(data, HashMap.class);
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println("Unsuccessful data recover in notification manager.");
         }
     }

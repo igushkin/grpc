@@ -30,7 +30,7 @@
 
                 <div class="mb-2 mt-2">
                     <label for="userEmails">Select the recipients:</label>
-                    <select class="form-control" name="userEmails" id="userEmails" multiple>
+                    <select class="form-control" name="userEmails" id="userEmails" multiple required>
                         <option value=""></option>
                         <th:block th:each="user: ${users}">
                             <option th:value="${user.email}" th:text="${user.name}"></option>

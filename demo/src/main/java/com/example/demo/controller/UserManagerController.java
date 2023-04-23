@@ -75,7 +75,7 @@ public class UserManagerController {
                 .build();
 
 
-        UserManager.addUser(newUser);
+        UserManager.updateUser(newUser);
 
         ModelAndView modelAndView = new ModelAndView("userService/method/updateUser.html");
         return modelAndView;

@@ -17,14 +17,14 @@ public class ExceptionHandlingController {
 
     @ExceptionHandler(StatusException.class)
     @ResponseStatus(HttpStatus.BAD_REQUEST)
-    public String handleSQLException(StatusRuntimeException ex) throws JsonProcessingException {
+    public String handleRuntimeException(StatusRuntimeException ex) throws JsonProcessingException {
         ObjectMapper objectMapper = new ObjectMapper();
         return objectMapper.writeValueAsString(ex.getMessage());
     }
 
     @ExceptionHandler(StatusRuntimeException.class)
     @ResponseStatus(HttpStatus.BAD_REQUEST)
-    public String handleIOException(StatusRuntimeException ex) throws JsonProcessingException {
+    public String handleException(StatusRuntimeException ex) throws JsonProcessingException {
         ObjectMapper objectMapper = new ObjectMapper();
         return objectMapper.writeValueAsString(ex.getMessage());
     }

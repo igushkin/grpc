@@ -26,10 +26,6 @@ public class MeetingManager extends gRPCService {
         }
     }
 
-    //rpc bookMeeting(Meeting) returns (google.protobuf.Int32Value);
-    //rpc getUserMeetings(google.protobuf.Int32Value) returns (stream Meeting);
-    //rpc getReport(stream google.protobuf.Int32Value) returns (Report);
-
     public static int addMeeting(MeetingService.Meeting meeting) {
         ManagedChannel channel = getChannel(serviceInfo);
         MeetingManagerGrpc.MeetingManagerBlockingStub blockingStub = MeetingManagerGrpc.newBlockingStub(channel);
